@@ -1,0 +1,3 @@
+/config/etc/sudoers.d
+/config/home/.nvm/versions
+/config/zsh/.oh-my-zsh/cache
