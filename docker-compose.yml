@@ -5,5 +5,5 @@ services:
   editor:
     container_name: editor
     build: containers/editor
-    user: "${UID}:${GID}"
+    # user: "${UID}:${GID}"
 

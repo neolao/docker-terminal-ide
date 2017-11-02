@@ -1,13 +1,11 @@
 #!/bin/bash
 
+if [ -d /sudoers.d ]
+then
+    cp /sudoers.d/* /etc/sudoers.d/
+fi
 
-HOME=/user
-SESSION="IDE"
-TERM=xterm-256color
+mkdir /home/$USER_NAME
+chown $USER_NAME:$USER_NAME /home/$USER_NAME
+su $USER_NAME -c "/launch-tmux-nvim.sh"
 
-export HOME
-export TERM
-
-/tmux/tmux -2 -f /user/.tmux.conf new-session -d -s $SESSION
-/tmux/tmux new-window -t $SESSION:1 -k -n EDITOR 'cd /workspace && nvim'
-/tmux/tmux attach -t $SESSION

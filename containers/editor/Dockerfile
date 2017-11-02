@@ -41,15 +41,12 @@ ENV LC_ALL en_US.UTF-8
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 RUN dpkg-reconfigure --frontend=noninteractive locales
 
-# User home
-RUN mkdir /user
-RUN chmod -R 777 /user
-
 # Volume
 RUN mkdir /workspace
 VOLUME ["/workspace"]
 
 # Entry point
+COPY ./launch-tmux-nvim.sh /
 COPY ./entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
 

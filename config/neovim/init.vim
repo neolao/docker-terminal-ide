@@ -5,10 +5,10 @@
     " Specify a directory for plugins
     " - For Neovim: ~/.local/share/nvim/plugged
     " - Avoid using standard Vim directory names like 'plugin'
-    if filereadable(expand("/user/plug.vim"))
-        source /user/plug.vim
+    if filereadable(expand("~/plug.vim"))
+        source ~/plug.vim
     endif
-    call plug#begin('/user/.config/nvim/plugged')
+    call plug#begin('~/.config/nvim/plugged')
 
     Plug 'tpope/vim-sensible'
     Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -18,14 +18,14 @@
     Plug 'vim-airline/vim-airline-themes'
     "Plug 'powerline/powerline'
     Plug 'isRuslan/vim-es6'
-    Plug '/user/.config/nvim/themes'
+    Plug '~/.config/nvim/themes'
 
     " Initialize plugin system
     call plug#end()
 
  " } }}1
 
-" [OPTION] {{{1
+" [OPTION]  {{{1
 " -------------
     " Define the shell
     " Useful for GitGutter
@@ -43,20 +43,20 @@
     set nocompatible
 
     " Changer le dossier contenant les fichiers temporaires
-    if isdirectory('/user/.vim-backup') == 0
-      :silent !mkdir -p /user/.vim-backup >/dev/null 2>&1
+    if isdirectory('~/.vim-backup') == 0
+      :silent !mkdir -p ~/.vim-backup >/dev/null 2>&1
     endif
-    set backupdir=/user/.vim-backup/
+    set backupdir=~/.vim-backup/
     set backup
-    if isdirectory('/user/.vim-swap') == 0
-      :silent !mkdir -p /user/.vim-swap >/dev/null 2>&1
+    if isdirectory('~/.vim-swap') == 0
+      :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
     endif
-    set directory=/user/.vim-swap/
+    set directory=~/.vim-swap/
     if exists("+undofile")
-      if isdirectory('/user/.vim-undo') == 0
-        :silent !mkdir -p /user/.vim-undo > /dev/null 2>&1
+      if isdirectory('~/.vim-undo') == 0
+        :silent !mkdir -p ~/.vim-undo > /dev/null 2>&1
       endif
-      set undodir=/user/.vim-undo/
+      set undodir=~/.vim-undo/
       set undofile
     endif
 
@@ -95,8 +95,8 @@
     "set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyo
 
     " Inclusion d'un autre fichier avec des options
-    if filereadable(expand("/user/.vimrc_local.vim"))
-        source /user/.vimrc_local.vim
+    if filereadable(expand("~/.vimrc_local.vim"))
+        source ~/.vimrc_local.vim
     endif
 
     " Activation de la syntaxe
@@ -220,7 +220,7 @@
 
 " }}}1
 
-" [THEME] {{{1
+" [T HEME] {{{1
 
     " Active le mode 256 couleurs (parce qu'on l'utilise souvent en remote!)
     set t_Co=256
@@ -244,7 +244,7 @@
 " }}}1
 
 
-" [PLUGIN] NERDTree {{{1
+" [PL UGIN] NERDTree {{{1
 " ----------------------
 
     " Afficher / Cacher NERDTree
@@ -293,7 +293,7 @@
     autocmd VimEnter * NERDTreeToggle
 " }}}1
 
-" [Shortcuts] {{{1
+ " [Shortcuts] {{{1
 " ----------------------
 
     " Tabs
