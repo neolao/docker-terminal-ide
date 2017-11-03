@@ -19,6 +19,11 @@
     "Plug 'powerline/powerline'
     Plug 'isRuslan/vim-es6'
     Plug '~/.config/nvim/themes'
+    Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+    Plug 'Shougo/denite.nvim'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+    Plug 'majutsushi/tagbar'
 
     " Initialize plugin system
     call plug#end()
@@ -26,7 +31,7 @@
  " } }}1
 
 " [OPTION]  {{{1
-" -------------
+
     " Define the shell
     " Useful for GitGutter
     " set shell=/bin/zsh
@@ -219,8 +224,7 @@
     au BufRead,BufNewFile *.php     set filetype=php
 
 " }}}1
-
-" [T HEME] {{{1
+" [THEME] {{{1
 
     " Active le mode 256 couleurs (parce qu'on l'utilise souvent en remote!)
     set t_Co=256
@@ -242,10 +246,7 @@
     "set rtp+=/user/.config/nvim/plugged/powerline/bindings/vim/
     "set laststatus=2
 " }}}1
-
-
-" [PL UGIN] NERDTree {{{1
-" ----------------------
+" [PLUGIN] NERDTree {{{1
 
     " Afficher / Cacher NERDTree
     let g:nerdtreeopened=1
@@ -274,6 +275,7 @@
     "autocmd TabLeave * wincmd p
     "autocmd TabEnter * execute ResumeNERDTree()
     "autocmd TabEnter * wincmd p
+    autocmd VimEnter * execute ResumeNERDTree()
 
     " Sous plugin nerdtree tabs
     let g:nerdtree_tabs_open_on_gui_startup = 1
@@ -290,11 +292,48 @@
     " Taille de l'explorateur
     let NERDTreeWinSize=30
 
-    autocmd VimEnter * NERDTreeToggle
-" }}}1
+    "autocmd VimEnter * execute ResumeNERDTree()
+    "autocmd TabEnter * execute ResumeNERDTree()
 
- " [Shortcuts] {{{1
-" ----------------------
+" }}}1
+" [PLUGIN] deoplete {{{1
+
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+    let g:deoplete#ignore_sources.php = ['omni']
+
+" }}}1
+" [PLUGIN] TagBar {{{1
+"
+    " Afficher / Cacher TagBar
+    let g:tagbaropened=1
+    function! ToggleTagBar()
+        execute(":TagbarToggle")
+        if g:tagbaropened != 0
+            let g:tagbaropened=0
+        else
+            let g:tagbaropened=1
+        endif
+    endfunction
+    function! ResumeTagBar()
+        if g:tagbaropened != 0
+            execute(":TagbarOpen")
+        else
+            execute(":TagbarClose")
+        endif
+    endfunction
+
+    " Ouvrir TagBar à chaque fois qu'on lance vim
+    " Et aussi à chaque fois qu'on change d'onglet
+    " La même sidebar est réutilisée à chaque fois
+    "autocmd VimEnter * execute ResumeTagBar()
+    "autocmd VimEnter * wincmd p
+    "autocmd TabLeave * wincmd p
+    "autocmd TabEnter * execute ResumeTagBar()
+    "autocmd TabEnter * wincmd p
+
+" }}}1
+" [Shortcuts] {{{1
 
     " Tabs
     map <C-t> :tabnew<cr>
@@ -307,4 +346,56 @@
     map ,<tab> :tabprevious<cr>
     map <S-tab> :tabprevious<cr>
 
+    " F7 : [PLUGIN] NERDTree
+    map <silent> <F7> :execute ToggleNERDTree()<cr>
+    map <C-e> :execute ToggleNERDTree()<cr>
+    imap <C-e> :execute ToggleNERDTree()<cr>
+    vmap <C-e> :execute ToggleNERDTree()<cr>
+    imap <F7> <Esc><F7>
+    vmap <F7> <Esc><F7>
+    map <silent> <F4> :NERDTreeFind<cr>
+    imap <F4> <Esc><F4>
+    vmap <F4> <Esc><F4>
+
+    " F8 : [PLUGIN] TagBar
+    map <silent> <F8> :execute ToggleTagBar()<cr>
+    map <C-l> :execute ToggleTagBar()<cr>
+    imap <C-l> :execute ToggleTagBar()<cr>
+    vmap <C-l> :execute ToggleTagBar()<cr>
+    imap <F8> <Esc><F8>
+    vmap <F8> <Esc><F8>
+
+    " Supprimer une ligne
+    map <silent> <C-d> :delete<cr>
+    imap <C-d> <Esc><C-d>:startinsert<cr>
+
+    " Déplacer la ligne vers le haut
+    map <silent> <C-u> :.move .-2<cr>
+    imap <C-u> <Esc><C-u>:startinsert<cr>
+
+    " Déplacer la ligne vers le bas
+    map <silent> <C-j> :.move .+1<cr>
+    imap <C-j> <Esc><C-j>:startinsert<cr>
+
+    " Déplacer les lignes vers le haut
+    vmap <silent> <C-u> :move '<-2<cr>gv
+
+    " Déplacer les lignes vers le bas
+    vmap <silent> <C-j> :move '>+1<cr>gv
+
+    " Dupliquer la ligne vers le haut
+    "map <silent> <C-i> :.copy .-1<cr>
+    "inoremap <C-i> <Esc>:.copy .-1<cr>:startinsert<cr>
+
+    " Dupliquer la ligne vers le bas
+    map <silent> <C-k> :.copy .<cr>
+    imap <C-k> <Esc><C-k>:startinsert<cr>
+
+    " Dupliquer les lignes vers le haut
+    vmap <silent> <C-i> :copy '><cr>gv
+
+    " Dupliquer les lignes vers le bas
+    vmap <silent> <C-k> :copy '<-1<cr>gv
+
 " }}}1
+

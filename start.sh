@@ -34,6 +34,9 @@ docker-compose run \
     -v "$currentDirectory/config/neovim/plugged:/home/$USER/.config/nvim/plugged:rw" \
     -v "$currentDirectory/config/neovim/themes:/home/$USER/.config/nvim/themes:ro" \
     -v "$currentDirectory/config/neovim/init.vim:/home/$USER/.config/nvim/init.vim:ro" \
+    -v "$currentDirectory/config/neovim/rplugin.vim:/home/$USER/.local/share/nvim/rplugin.vim:ro" \
     -v "$currentDirectory/config/home/.nvm:/home/$USER/.nvm:rw" \
+    -v "$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw" \
+    -v "/:/disk:ro" \
     -v "$workspace:/workspace:rw" \
     editor
