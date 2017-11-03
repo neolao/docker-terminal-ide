@@ -1,11 +1,13 @@
 #!/bin/bash
 
-if [ -d /sudoers.d ]
-then
-    cp /sudoers.d/* /etc/sudoers.d/
-fi
+# Add the user to sudoers
+echo "$USER_NAME  ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$USER_NAME
+chmod 440 /etc/sudoers.d/$USER_NAME
 
-mkdir /home/$USER_NAME
-chown $USER_NAME:$USER_NAME /home/$USER_NAME
+# Setup home permission
+mkdir -p /home/$USER_NAME/.config
+chown -R $USER_NAME:$USER_NAME /home/$USER_NAME
+
+# Launch TMUX
 su $USER_NAME -c "/launch-tmux-nvim.sh"
 
