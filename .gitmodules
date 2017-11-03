@@ -25,3 +25,6 @@
 [submodule "config/home/.nvm"]
 	path = config/home/.nvm
 	url = https://github.com/creationix/nvm.git
+[submodule "config/zsh/oh-my-zsh"]
+	path = config/zsh/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
