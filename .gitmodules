@@ -1,0 +1,24 @@
+[submodule "config/neovim/plugged/editorconfig-vim"]
+	path = config/neovim/plugged/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "config/neovim/plugged/lightline.vim"]
+	path = config/neovim/plugged/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule "config/neovim/plugged/nerdtree"]
+	path = config/neovim/plugged/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "config/neovim/plugged/powerline"]
+	path = config/neovim/plugged/powerline
+	url = https://github.com/powerline/powerline.git
+[submodule "config/neovim/plugged/vim-airline"]
+	path = config/neovim/plugged/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "config/neovim/plugged/vim-airline-themes"]
+	path = config/neovim/plugged/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "config/neovim/plugged/vim-es6"]
+	path = config/neovim/plugged/vim-es6
+	url = https://github.com/isRuslan/vim-es6.git
+[submodule "config/neovim/plugged/vim-sensible"]
+	path = config/neovim/plugged/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
