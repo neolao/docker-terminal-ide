@@ -1,13 +1,19 @@
 #!/bin/bash
 
-currentDirectory=$(dirname $0)
+scriptPath=$(readlink -f $0)
+currentDirectory=$(dirname $scriptPath)
 currentDirectory=$(realpath $currentDirectory)
 
 GID=$(id -g)
 #export UID
 #export GID
 
-workspace=$(realpath $1)
+# Select the workspace
+workspace=$(pwd)
+if [ -n "$1" ]
+then
+    workspace=$(realpath $1)
+fi
 
 docker-compose run \
     -e USER_NAME=$USER \
