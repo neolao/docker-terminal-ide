@@ -1,6 +1,19 @@
 Terminal IDE with Docker
 ========================
 
+Clone the project including submodules:
+
+```bash
+git clone --recursive https://github.com/neolao/docker-terminal-ide.git
+```
+
+Load submodules if the project is already cloned:
+
+```bash
+git submodule update --init --recursive
+```
+
+
 Add the start script to `/usr/local/bin`:
 
 ```bash

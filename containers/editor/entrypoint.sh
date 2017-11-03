@@ -9,5 +9,5 @@ mkdir -p /home/$USER_NAME/.config
 chown -R $USER_NAME:$USER_NAME /home/$USER_NAME
 
 # Launch TMUX
-su $USER_NAME -c "/launch-tmux-nvim.sh"
+su $USER_NAME --preserve-environment -c "/launch-tmux-nvim.sh"
 

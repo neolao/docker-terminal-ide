@@ -15,6 +15,7 @@ then
     workspace=$(realpath $1)
 fi
 
+cd $currentDirectory
 docker-compose run \
     -e USER_NAME=$USER \
     -e USER_UID=$UID \
@@ -23,6 +24,7 @@ docker-compose run \
     -v "/etc/shadow:/etc/shadow:ro" \
     -v "/etc/group:/etc/group:ro" \
     -v "$HOME/.ssh:/home/$USER/.ssh:rw" \
+    -v "$HOME/.gitconfig:/home/$USER/.gitconfig:ro" \
     -v "$currentDirectory/config/etc/hostname:/etc/hostname:ro" \
     -v "$currentDirectory/config/zsh/zshrc:/home/$USER/.zshrc:ro" \
     -v "$currentDirectory/config/zsh/oh-my-zsh:/home/$USER/.oh-my-zsh:rw" \
