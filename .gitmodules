@@ -22,3 +22,6 @@
 [submodule "config/neovim/plugged/vim-sensible"]
 	path = config/neovim/plugged/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
+[submodule "config/home/.nvm"]
+	path = config/home/.nvm
+	url = https://github.com/creationix/nvm.git
