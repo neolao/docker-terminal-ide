@@ -26,6 +26,7 @@ docker-compose run \
     -v "$currentDirectory/config/etc/hostname:/etc/hostname:ro" \
     -v "$currentDirectory/config/zsh/zshrc:/home/$USER/.zshrc:ro" \
     -v "$currentDirectory/config/zsh/oh-my-zsh:/home/$USER/.oh-my-zsh:rw" \
+    -v "$currentDirectory/config/zsh/oh-my-zsh-custom:/home/$USER/.oh-my-zsh-custom:rw" \
     -v "$currentDirectory/config/tmux/tmux.conf:/home/$USER/.tmux.conf:ro" \
     -v "$currentDirectory/config/neovim/plug.vim:/home/$USER/plug.vim:ro" \
     -v "$currentDirectory/config/neovim/plugged:/home/$USER/.config/nvim/plugged:rw" \
