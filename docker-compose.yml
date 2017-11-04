@@ -1,9 +1,0 @@
-version: '3'
-
-services:
-
-  editor:
-    container_name: editor
-    build: containers/editor
-    # user: "${UID}:${GID}"
-

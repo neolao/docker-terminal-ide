@@ -8,6 +8,11 @@ chmod 440 /etc/sudoers.d/$USER_NAME
 mkdir -p /home/$USER_NAME/.config
 chown -R $USER_NAME:$USER_NAME /home/$USER_NAME
 
-# Launch TMUX
-su $USER_NAME --preserve-environment -c "/launch-tmux-nvim.sh"
+# Launch
+if [ -n "$LAUNCHER" ]
+then
+    su $USER_NAME --preserve-environment -c "$LAUNCHER"
+else
+    su $USER_NAME --preserve-environment -c "zsh"
+fi
 

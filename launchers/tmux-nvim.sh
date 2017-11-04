@@ -12,6 +12,9 @@ cols=$(tput cols)
 #stty rows $lines
 #stty cols $cols
 
+echo "Setup ..."
+/setups/auto.sh
+
 echo "Starting TMUX ..."
 sleep 1
 /tmux/tmux -2 -f $HOME/.tmux.conf new-session -d -s $SESSION

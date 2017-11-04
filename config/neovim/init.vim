@@ -22,8 +22,11 @@
     Plug 'Shougo/vimproc.vim', {'do' : 'make'}
     Plug 'Shougo/denite.nvim'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     Plug 'majutsushi/tagbar'
+
+    if $NEOVIM_PLUGIN_PHPCD
+        Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+    endif
 
     " Initialize plugin system
     call plug#end()

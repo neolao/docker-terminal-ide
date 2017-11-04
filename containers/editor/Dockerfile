@@ -34,9 +34,6 @@ RUN cd ../ && rm -rf nvim
 RUN apt-get update && apt-get install -y python3-pip
 RUN pip3 install neovim
 
-# Install PHP
-RUN apt-get update && apt-get install -y php7.0-cli php7.0-mbstring php7.0-xml php7.0-msgpack
-
 # Install ctags
 RUN cd / && git clone https://github.com/universal-ctags/ctags.git
 RUN cd /ctags && ./autogen.sh && ./configure
@@ -56,7 +53,6 @@ RUN mkdir /workspace
 VOLUME ["/workspace"]
 
 # Entry point
-COPY ./launch-tmux-nvim.sh /
 COPY ./entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
 
