@@ -9,10 +9,18 @@ GID=$(id -g)
 #export GID
 
 # Select the workspace
+FILE_TO_OPEN=""
 workspace=$(pwd)
 if [ -n "$1" ]
 then
     workspace=$(realpath $1)
+fi
+if [ -f $workspace ]
+then
+    FILE_TO_OPEN=$workspace
+    workspace=$(dirname $workspace)
+    directoryLength=${#workspace}+1
+    FILE_TO_OPEN=${FILE_TO_OPEN:$directoryLength}
 fi
 
 # Select the preset
@@ -45,6 +53,7 @@ docker run -it --rm \
     -e USER_NAME=$USER \
     -e USER_UID=$UID \
     -e USER_GID=$GID \
+    -e FILE_TO_OPEN=$FILE_TO_OPEN \
     -e NEOVIM_PLUGIN_PHPCD=$NEOVIM_PLUGIN_PHPCD \
     -e LAUNCHER=/launchers/tmux-nvim.sh \
     -v "/etc/passwd:/etc/passwd:ro" \
