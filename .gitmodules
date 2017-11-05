@@ -52,3 +52,6 @@
 [submodule "config/neovim/plugged/tagbar"]
 	path = config/neovim/plugged/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "config/neovim/plugged/tern_for_vim"]
+	path = config/neovim/plugged/tern_for_vim
+	url = https://github.com/ternjs/tern_for_vim.git

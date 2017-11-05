@@ -4,10 +4,6 @@ scriptPath=$(readlink -f $0)
 currentDirectory=$(dirname $scriptPath)
 currentDirectory=$(realpath $currentDirectory)
 
-GID=$(id -g)
-#export UID
-#export GID
-
 # Select the workspace
 FILE_TO_OPEN=""
 workspace=$(pwd)
@@ -32,6 +28,7 @@ fi
 
 # Configuration
 NEOVIM_PLUGIN_PHPCD=0
+NEOVIM_PLUGIN_TERN=1
 case $preset in
     default)
         image="neolao/ide"
@@ -48,6 +45,7 @@ case $preset in
 esac
 
 # Run the editor
+GID=$(id -g)
 cd $currentDirectory
 docker run -it --rm \
     -e USER_NAME=$USER \
@@ -55,6 +53,7 @@ docker run -it --rm \
     -e USER_GID=$GID \
     -e FILE_TO_OPEN=$FILE_TO_OPEN \
     -e NEOVIM_PLUGIN_PHPCD=$NEOVIM_PLUGIN_PHPCD \
+    -e NEOVIM_PLUGIN_TERN=$NEOVIM_PLUGIN_TERN \
     -e LAUNCHER=/launchers/tmux-nvim.sh \
     -v "/etc/passwd:/etc/passwd:ro" \
     -v "/etc/shadow:/etc/shadow:ro" \
@@ -71,6 +70,7 @@ docker run -it --rm \
     -v "$currentDirectory/config/neovim/plug.vim:/home/$USER/plug.vim:ro" \
     -v "$currentDirectory/config/neovim/plugged:/home/$USER/.config/nvim/plugged:rw" \
     -v "$currentDirectory/config/neovim/themes:/home/$USER/.config/nvim/themes:ro" \
+    -v "$currentDirectory/config/neovim/init:/home/$USER/.config/nvim/init:ro" \
     -v "$currentDirectory/config/neovim/init.vim:/home/$USER/.config/nvim/init.vim:ro" \
     -v "$currentDirectory/config/neovim/rplugin.vim:/home/$USER/.local/share/nvim/rplugin.vim:ro" \
     -v "$currentDirectory/config/home/.nvm:/home/$USER/.nvm:rw" \
