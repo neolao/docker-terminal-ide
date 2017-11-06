@@ -2,7 +2,7 @@
 
 if [ "$NEOVIM_PLUGIN_PHPCD" -eq 1 ]
 then
-    echo "Configure NeoVim plugin: phpcd ..."
+    echo "Install NeoVim plugin: phpcd ..."
 else
     exit 0
 fi

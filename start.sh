@@ -27,6 +27,7 @@ then
 fi
 
 # Configuration
+NODEJS_DEFAULT_VERSION=8
 NEOVIM_PLUGIN_PHPCD=0
 NEOVIM_PLUGIN_TERN=1
 case $preset in
@@ -52,6 +53,7 @@ docker run -it --rm \
     -e USER_UID=$UID \
     -e USER_GID=$GID \
     -e FILE_TO_OPEN=$FILE_TO_OPEN \
+    -e NODEJS_DEFAULT_VERSION=$NODEJS_DEFAULT_VERSION \
     -e NEOVIM_PLUGIN_PHPCD=$NEOVIM_PLUGIN_PHPCD \
     -e NEOVIM_PLUGIN_TERN=$NEOVIM_PLUGIN_TERN \
     -e LAUNCHER=/launchers/tmux-nvim.sh \

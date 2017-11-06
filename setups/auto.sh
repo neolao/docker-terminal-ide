@@ -6,7 +6,15 @@ currentDirectory=$(realpath $currentDirectory)
 
 
 cd $currentDirectory
-for file in $(find ./**/* -name '*.sh')
+
+# Configure
+for file in $(find ./**/* -name '*-configure.sh')
+do 
+    sh $file
+done
+
+# Install
+for file in $(find ./**/* -name '*-install.sh')
 do 
     sh $file
 done
