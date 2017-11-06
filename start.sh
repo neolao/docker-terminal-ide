@@ -2,10 +2,12 @@
 
 currentDirectory=$(dirname $0)
 realpathBinary=$(which realpath)
-if [ ! -x realpathBinary ]
+
+if [ ! -x $realpathBinary ]
 then
     realpathBinary=$currentDirectory/applications/realpath/realpath
 fi
+
 scriptPath=$($realpathBinary $0)
 currentDirectory=$(dirname $scriptPath)
 
