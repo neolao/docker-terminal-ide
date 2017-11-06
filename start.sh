@@ -11,19 +11,62 @@ fi
 scriptPath=$($realpathBinary $0)
 currentDirectory=$(dirname $scriptPath)
 
+# Default parameters
+export USER_NAME=$USER
+export USER_UID=$UID
+export USER_GID=$(id -g)
+export LAUNCHER=/launchers/tmux-nvim.sh
+export SERVICE_SMARTGIT=0
+export FILE_TO_OPEN=""
+export WORKSPACE=$(pwd)
+export NODEJS_DEFAULT_VERSION=8
+export NEOVIM_PLUGIN_PHPCD=0
+export NEOVIM_PLUGIN_TERN=1
+
+# Options
+target="."
+while test $# -gt 0; do
+    case "$1" in
+        -h|--help)
+            echo "Terminal IDE"
+            echo "============"
+            echo ""
+            echo "Usage: $0 [OPTIONS] [TARGET]"
+            echo ""
+            echo "Examples:"
+            echo "    $0"
+            echo "    $0 /path/to/project/directory"
+            echo "    $0 /path/to/file.txt"
+            echo ""
+            echo "Options:"
+            echo "    --smartgit     Launch SmartGit"
+            exit 0
+            ;;
+
+        --smartgit)
+            export SERVICE_SMARTGIT=1
+            shift
+            ;;
+
+        *)
+            target="$1"
+            shift
+            ;;
+    esac
+done
+
+
 # Select the workspace
-FILE_TO_OPEN=""
-workspace=$(pwd)
-if [ -n "$1" ]
+if [ -n "$target" ]
 then
-    workspace=$(realpath $1)
+    export WORKSPACE=$(realpath $target)
 fi
-if [ -f $workspace ]
+if [ -f $WORKSPACE ]
 then
-    FILE_TO_OPEN=$workspace
-    workspace=$(dirname $workspace)
-    directoryLength=${#workspace}+1
-    FILE_TO_OPEN=${FILE_TO_OPEN:$directoryLength}
+    export FILE_TO_OPEN=$WORKSPACE
+    export WORKSPACE=$(dirname $WORKSPACE)
+    directoryLength=${#WORKSPACE}+1
+    export FILE_TO_OPEN=${FILE_TO_OPEN:$directoryLength}
 fi
 
 # Select the preset
@@ -34,17 +77,14 @@ then
 fi
 
 # Configuration
-NODEJS_DEFAULT_VERSION=8
-NEOVIM_PLUGIN_PHPCD=0
-NEOVIM_PLUGIN_TERN=1
 case $preset in
     default)
-        image="neolao/ide"
+        service="editor"
         ;;
 
     php)
-        image="neolao/ide:php"
-        NEOVIM_PLUGIN_PHPCD=1
+        service="editor_php"
+        export NEOVIM_PLUGIN_PHPCD=1
         ;;
 
     *)
@@ -52,10 +92,13 @@ case $preset in
         exit 1
 esac
 
-# Run the editor
-GID=$(id -g)
+# Run services
 cd $currentDirectory
-docker run -it --rm \
+if [ "$SERVICE_SMARTGIT" -eq 1 ]; then
+    docker-compose up -d smartgit
+fi
+
+docker-compose run --rm \
     -e USER_NAME=$USER \
     -e USER_UID=$UID \
     -e USER_GID=$GID \
@@ -63,7 +106,7 @@ docker run -it --rm \
     -e NODEJS_DEFAULT_VERSION=$NODEJS_DEFAULT_VERSION \
     -e NEOVIM_PLUGIN_PHPCD=$NEOVIM_PLUGIN_PHPCD \
     -e NEOVIM_PLUGIN_TERN=$NEOVIM_PLUGIN_TERN \
-    -e LAUNCHER=/launchers/tmux-nvim.sh \
+    -e LAUNCHER=$LAUNCHER \
     -v "/etc/passwd:/etc/passwd:ro" \
     -v "/etc/shadow:/etc/shadow:ro" \
     -v "/etc/group:/etc/group:ro" \
@@ -86,5 +129,7 @@ docker run -it --rm \
     -v "$currentDirectory/applications:/applications:rw" \
     -v "$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw" \
     -v "/:/disk:ro" \
-    -v "$workspace:/workspace:rw" \
-    $image
+    -v "$WORKSPACE:/workspace:rw" \
+    $service
+
+docker-compose down

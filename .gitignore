@@ -1,3 +1,6 @@
+.DS_Store
+/applications/smartgit/**/log.txt
+/applications/smartgit/config/17.1
 /config/home/.nvm/versions
 /config/home/.nvm/test
 /config/zsh/oh-my-zsh/cache
