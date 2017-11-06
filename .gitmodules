@@ -55,3 +55,6 @@
 [submodule "config/neovim/plugged/tern_for_vim"]
 	path = config/neovim/plugged/tern_for_vim
 	url = https://github.com/ternjs/tern_for_vim.git
+[submodule "config/neovim/plugged/syntastic"]
+	path = config/neovim/plugged/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git

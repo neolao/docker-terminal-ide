@@ -18,6 +18,8 @@ Plug 'Shougo/denite.nvim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'majutsushi/tagbar'
 
+Plug 'vim-syntastic/syntastic'
+
 if $NEOVIM_PLUGIN_TERN
     Plug 'ternjs/tern_for_vim'
 endif
