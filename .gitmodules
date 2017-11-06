@@ -58,3 +58,6 @@
 [submodule "config/neovim/plugged/syntastic"]
 	path = config/neovim/plugged/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "applications/gitlist"]
+	path = applications/gitlist
+	url = https://github.com/klaussilveira/gitlist.git

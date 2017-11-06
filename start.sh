@@ -76,6 +76,7 @@ docker run -it --rm \
     -v "$currentDirectory/config/neovim/init.vim:/home/$USER/.config/nvim/init.vim:ro" \
     -v "$currentDirectory/config/neovim/rplugin.vim:/home/$USER/.local/share/nvim/rplugin.vim:ro" \
     -v "$currentDirectory/config/home/.nvm:/home/$USER/.nvm:rw" \
+    -v "$currentDirectory/applications:/applications:rw" \
     -v "$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw" \
     -v "/:/disk:ro" \
     -v "$workspace:/workspace:rw" \

@@ -6,7 +6,7 @@ chmod 440 /etc/sudoers.d/$USER_NAME
 
 # Setup home permission
 mkdir -p /home/$USER_NAME/.config
-chown -R $USER_NAME:$USER_NAME /home/$USER_NAME
+chown -R $USER_NAME:$USER_NAME /home/$USER_NAME > /dev/null 2>&1
 
 # Launch
 if [ -n "$LAUNCHER" ]
