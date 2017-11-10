@@ -18,6 +18,10 @@ Plug 'Shougo/denite.nvim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'majutsushi/tagbar'
 
+" Typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+
 Plug 'vim-syntastic/syntastic'
 
 if $NEOVIM_PLUGIN_TERN

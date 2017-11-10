@@ -15,13 +15,14 @@ currentDirectory=$(dirname $scriptPath)
 export USER_NAME=$USER
 export USER_UID=$UID
 export USER_GID=$(id -g)
-export LAUNCHER=/launchers/tmux-nvim.sh
+export LAUNCHER=/launchers/nvim.sh
 export SERVICE_SMARTGIT=0
 export FILE_TO_OPEN=""
 export WORKSPACE=$(pwd)
 export NODEJS_DEFAULT_VERSION=8
 export NEOVIM_PLUGIN_PHPCD=0
 export NEOVIM_PLUGIN_TERN=1
+export START_TMUX=0
 
 # Options
 target="."
@@ -41,6 +42,12 @@ while test $# -gt 0; do
             echo "Options:"
             echo "    --smartgit     Launch SmartGit"
             exit 0
+            ;;
+
+        --tmux)
+            export START_TMUX=1
+            export LAUNCHER=/launchers/tmux-nvim.sh
+            shift
             ;;
 
         --smartgit)
@@ -106,12 +113,14 @@ docker-compose run --rm \
     -e NODEJS_DEFAULT_VERSION=$NODEJS_DEFAULT_VERSION \
     -e NEOVIM_PLUGIN_PHPCD=$NEOVIM_PLUGIN_PHPCD \
     -e NEOVIM_PLUGIN_TERN=$NEOVIM_PLUGIN_TERN \
+    -e TMUX=$TMUX \
     -e LAUNCHER=$LAUNCHER \
     -v "/etc/passwd:/etc/passwd:ro" \
     -v "/etc/shadow:/etc/shadow:ro" \
     -v "/etc/group:/etc/group:ro" \
     -v "$HOME/.ssh:/home/$USER/.ssh:rw" \
     -v "$HOME/.gitconfig:/home/$USER/.gitconfig:ro" \
+    -v "$currentDirectory/config/home/.Xdefaults:/home/$USER/.Xdefaults:ro" \
     -v "$currentDirectory/setups:/setups:ro" \
     -v "$currentDirectory/launchers:/launchers:ro" \
     -v "$currentDirectory/config/etc/hostname:/etc/hostname:ro" \
