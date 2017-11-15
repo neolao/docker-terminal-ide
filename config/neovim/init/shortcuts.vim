@@ -12,9 +12,9 @@ map <S-tab> :tabprevious<cr>
 " F7 : [PLUGIN] NERDTree
 map <silent> <F7> <plug>NERDTreeTabsToggle<cr>
 map <C-e> <plug>NERDTreeTabsToggle<cr>
-imap <C-e> <plug>NERDTreeTabsToggle<cr>
-vmap <C-e> <plug>NERDTreeTabsToggle<cr>
-imap <F7> <Esc><F7>
+imap <C-e> <Esc> <plug>NERDTreeTabsToggle<cr>i
+vmap <C-e> <Esc> <plug>NERDTreeTabsToggle<cr>
+imap <F7> <Esc><F7>i
 vmap <F7> <Esc><F7>
 map <silent> <F4> :NERDTreeFind<cr>
 imap <F4> <Esc><F4>
@@ -23,8 +23,8 @@ vmap <F4> <Esc><F4>
 " F8 : [PLUGIN] TagBar
 map <silent> <F8> :execute ToggleTagBar()<cr>
 map <C-l> :execute ToggleTagBar()<cr>
-imap <C-l> :execute ToggleTagBar()<cr>
-vmap <C-l> :execute ToggleTagBar()<cr>
+imap <C-l> <Esc> :execute ToggleTagBar()<cr>i
+vmap <C-l> <Esc> :execute ToggleTagBar()<cr>
 imap <F8> <Esc><F8>
 vmap <F8> <Esc><F8>
 
