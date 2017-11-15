@@ -10,10 +10,10 @@ map ,<tab> :tabprevious<cr>
 map <S-tab> :tabprevious<cr>
 
 " F7 : [PLUGIN] NERDTree
-map <silent> <F7> :execute ToggleNERDTree()<cr>
-map <C-e> :execute ToggleNERDTree()<cr>
-imap <C-e> :execute ToggleNERDTree()<cr>
-vmap <C-e> :execute ToggleNERDTree()<cr>
+map <silent> <F7> <plug>NERDTreeTabsToggle<cr>
+map <C-e> <plug>NERDTreeTabsToggle<cr>
+imap <C-e> <plug>NERDTreeTabsToggle<cr>
+vmap <C-e> <plug>NERDTreeTabsToggle<cr>
 imap <F7> <Esc><F7>
 vmap <F7> <Esc><F7>
 map <silent> <F4> :NERDTreeFind<cr>

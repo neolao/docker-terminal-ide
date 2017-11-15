@@ -67,3 +67,6 @@
 [submodule "config/neovim/plugged/tsuquyomi"]
 	path = config/neovim/plugged/tsuquyomi
 	url = https://github.com/Quramy/tsuquyomi.git
+[submodule "config/neovim/plugged/vim-nerdtree-tabs"]
+	path = config/neovim/plugged/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git

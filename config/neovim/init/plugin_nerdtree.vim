@@ -25,13 +25,6 @@ endfunction
 "autocmd TabLeave * wincmd p
 "autocmd TabEnter * execute ResumeNERDTree()
 "autocmd TabEnter * wincmd p
-autocmd VimEnter * execute ResumeNERDTree()
-
-" Sous plugin nerdtree tabs
-let g:nerdtree_tabs_open_on_gui_startup = 1
-let g:nerdtree_tabs_open_on_console_startup = 1
-let g:nerdtree_tabs_smart_startup_focus = 1
-let g:nerdtree_tabs_focus_on_files = 1
 
 " Ne pas ignorer de fichiers
 let NERDTreeIgnore=[]
@@ -42,7 +35,5 @@ let NERDTreeShowHidden=1
 " Taille de l'explorateur
 let NERDTreeWinSize=30
 
-"autocmd VimEnter * execute ResumeNERDTree()
-"autocmd TabEnter * execute ResumeNERDTree()
 
 
