@@ -17,11 +17,12 @@ echo "Setup ..."
 
 echo "Starting TMUX ..."
 sleep 1
-/tmux/tmux -2 -f $HOME/.tmux.conf new-session -d -s $SESSION
+options="-2 -S /tmp/tmux.pid -f $HOME/.tmux.conf"
+/tmux/tmux $options new-session -d -s $SESSION
 if [ "$FILE_TO_OPEN" == "" ]
 then
-    /tmux/tmux new-window -t $SESSION:1 -k -n EDITOR "cd /workspace && nvim"
+    /tmux/tmux $options new-window -t $SESSION:1 -k -n EDITOR "cd /workspace && nvim"
 else
-    /tmux/tmux new-window -t $SESSION:1 -k -n EDITOR "cd /workspace && nvim $FILE_TO_OPEN"
+    /tmux/tmux $options new-window -t $SESSION:1 -k -n EDITOR "cd /workspace && nvim $FILE_TO_OPEN"
 fi
-/tmux/tmux attach -t $SESSION
+/tmux/tmux $options attach -t $SESSION

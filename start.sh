@@ -19,7 +19,7 @@ export LAUNCHER=/launchers/nvim.sh
 export SERVICE_SMARTGIT=0
 export FILE_TO_OPEN=""
 export WORKSPACE=$(pwd)
-export NODEJS_DEFAULT_VERSION=8
+export NODEJS_DEFAULT_VERSION=0
 export NEOVIM_PLUGIN_PHPCD=0
 export NEOVIM_PLUGIN_TERN=1
 export START_TMUX=0
@@ -42,6 +42,12 @@ while test $# -gt 0; do
             echo "Options:"
             echo "    --smartgit     Launch SmartGit"
             exit 0
+            ;;
+
+        --nodejs=*)
+            option=$1
+            export NODEJS_DEFAULT_VERSION=${option:9}
+            shift
             ;;
 
         --tmux)
