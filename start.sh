@@ -21,7 +21,7 @@ export FILE_TO_OPEN=""
 export WORKSPACE=$(pwd)
 export NODEJS_DEFAULT_VERSION=0
 export NEOVIM_PLUGIN_PHPCD=0
-export NEOVIM_PLUGIN_TERN=1
+export NEOVIM_PLUGIN_TERN=0
 export START_TMUX=0
 
 # Options
@@ -47,6 +47,7 @@ while test $# -gt 0; do
         --nodejs=*)
             option=$1
             export NODEJS_DEFAULT_VERSION=${option:9}
+            export NEOVIM_PLUGIN_TERN=1
             shift
             ;;
 
@@ -143,6 +144,7 @@ docker-compose run --rm \
     -v "$currentDirectory/config/home/.nvm:/home/$USER/.nvm:rw" \
     -v "$currentDirectory/applications:/applications:rw" \
     -v "$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw" \
+    -v "$currentDirectory/bin/terminal-colors.py:/usr/local/bin/terminal-colors:ro" \
     -v "/:/disk:ro" \
     -v "$WORKSPACE:/workspace:rw" \
     $service

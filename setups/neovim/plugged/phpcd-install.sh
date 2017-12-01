@@ -2,13 +2,22 @@
 
 if [ "$NEOVIM_PLUGIN_PHPCD" -eq 1 ]
 then
-    echo "Install NeoVim plugin: phpcd ..."
+    echo ""
+    echo "- Install NeoVim plugin: phpcd ..."
 else
     exit 0
 fi
 
 cd ~/.config/nvim/plugged/phpcd.vim
-if [ ! -d "./vendor" ]
+if [ -d "./vendor" ]
 then
-    composer install
+    echo "OK" | trace_output
+    exit 0
 fi
+
+
+. /setups/util/trace_output.sh
+(
+    composer install
+) 2>&1 | trace_output
+

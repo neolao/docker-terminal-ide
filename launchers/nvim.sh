@@ -10,11 +10,9 @@ echo "Setup ..."
 /setups/auto.sh
 
 cd /workspace
-zsh
-exit 0
 if [ "$FILE_TO_OPEN" == "" ]
 then
-    zsh -c nvim
+    nvim
 else
-    zsh -c nvim $FILE_TO_OPEN
+    nvim $FILE_TO_OPEN
 fi
