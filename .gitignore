@@ -5,3 +5,5 @@
 /config/home/.nvm/test
 /config/zsh/oh-my-zsh/cache
 /config/zsh/oh-my-zsh/log
+/var
+!/var/.keep

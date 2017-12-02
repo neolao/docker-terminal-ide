@@ -1,0 +1,17 @@
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = auto
+
+[push]
+    default = matching
+
+[core]
+    editor = nvim
+    pager = less -R
+
+[include]
+    path = /git/config/aliases
+    path = /var/ide/git/aliases
+    path = /var/ide/git/user

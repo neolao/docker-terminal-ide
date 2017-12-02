@@ -23,6 +23,7 @@ export NODEJS_DEFAULT_VERSION=0
 export NEOVIM_PLUGIN_PHPCD=0
 export NEOVIM_PLUGIN_TERN=0
 export START_TMUX=0
+export MULTIPLE=1
 
 # Options
 target="."
@@ -38,9 +39,12 @@ while test $# -gt 0; do
             echo "    $0"
             echo "    $0 /path/to/project/directory"
             echo "    $0 /path/to/file.txt"
+            echo "    $0 --nodejs=8 /path/to/file.js"
             echo ""
             echo "Options:"
-            echo "    --smartgit     Launch SmartGit"
+            echo "    --nodejs=N    Install NodeJS version N"
+            echo "    --smartgit    Launch SmartGit"
+            echo "    --tmux        Use TMUX"
             exit 0
             ;;
 
@@ -59,6 +63,11 @@ while test $# -gt 0; do
 
         --smartgit)
             export SERVICE_SMARTGIT=1
+            shift
+            ;;
+
+        --one-instance)
+            export MULTIPLE=0
             shift
             ;;
 
@@ -112,6 +121,9 @@ if [ "$SERVICE_SMARTGIT" -eq 1 ]; then
     docker-compose up -d smartgit
 fi
 
+touch $currentDirectory/var/gitconfig.user
+touch $currentDirectory/var/gitconfig.aliases
+
 docker-compose run --rm \
     -e USER_NAME=$USER \
     -e USER_UID=$UID \
@@ -126,10 +138,12 @@ docker-compose run --rm \
     -v "/etc/shadow:/etc/shadow:ro" \
     -v "/etc/group:/etc/group:ro" \
     -v "$HOME/.ssh:/home/$USER/.ssh:rw" \
-    -v "$HOME/.gitconfig:/home/$USER/.gitconfig:ro" \
     -v "$currentDirectory/config/home/.Xdefaults:/home/$USER/.Xdefaults:ro" \
     -v "$currentDirectory/setups:/setups:ro" \
     -v "$currentDirectory/launchers:/launchers:ro" \
+    -v "$currentDirectory/config/git/.gitconfig:/home/$USER/.gitconfig:ro" \
+    -v "$currentDirectory/config/git/config:/git/config:ro" \
+    -v "$currentDirectory/config/git/commands:/git/commands:ro" \
     -v "$currentDirectory/config/etc/hostname:/etc/hostname:ro" \
     -v "$currentDirectory/config/zsh/zshrc:/home/$USER/.zshrc:ro" \
     -v "$currentDirectory/config/zsh/oh-my-zsh:/home/$USER/.oh-my-zsh:rw" \
@@ -145,8 +159,14 @@ docker-compose run --rm \
     -v "$currentDirectory/applications:/applications:rw" \
     -v "$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw" \
     -v "$currentDirectory/bin/terminal-colors.py:/usr/local/bin/terminal-colors:ro" \
+    -v "$currentDirectory/var/gitconfig.user:/var/ide/git/user:ro" \
+    -v "$currentDirectory/var/gitconfig.aliases:/var/ide/git/aliases:ro" \
     -v "/:/disk:ro" \
     -v "$WORKSPACE:/workspace:rw" \
     $service
 
-docker-compose down
+if [ "$MULTIPLE" -eq 0 ]
+then
+    docker-compose down
+fi
+

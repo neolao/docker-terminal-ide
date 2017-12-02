@@ -1,0 +1,5 @@
+[alias]
+    create-remote-branch = !bash /git/commands/create-remote-branch.sh
+    track-remote-branch = !git checkout --track -b $1 origin/$1
+    create-tag = !bash /git/commands/create-tag.sh
+    reset-file = !bash /git/commands/reset-file.sh
