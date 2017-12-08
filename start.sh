@@ -23,6 +23,7 @@ export NODEJS_DEFAULT_VERSION=0
 export NEOVIM_PLUGIN_PHPCD=0
 export NEOVIM_PLUGIN_TERN=0
 export START_TMUX=0
+export START_TWIN=0
 export MULTIPLE=1
 
 # Options
@@ -58,6 +59,12 @@ while test $# -gt 0; do
         --tmux)
             export START_TMUX=1
             export LAUNCHER=/launchers/tmux-nvim.sh
+            shift
+            ;;
+
+        --twin)
+            export START_TWIN=1
+            export LAUNCHER=/launchers/twin.sh
             shift
             ;;
 
@@ -149,6 +156,7 @@ docker-compose run --rm \
     -v "$currentDirectory/config/zsh/oh-my-zsh:/home/$USER/.oh-my-zsh:rw" \
     -v "$currentDirectory/config/zsh/oh-my-zsh-custom:/home/$USER/.oh-my-zsh-custom:rw" \
     -v "$currentDirectory/config/tmux/tmux.conf:/home/$USER/.tmux.conf:ro" \
+    -v "$currentDirectory/config/twin/twinrc2:/home/$USER/.twinrc:ro" \
     -v "$currentDirectory/config/neovim/plug.vim:/home/$USER/plug.vim:ro" \
     -v "$currentDirectory/config/neovim/plugged:/home/$USER/.config/nvim/plugged:rw" \
     -v "$currentDirectory/config/neovim/themes:/home/$USER/.config/nvim/themes:ro" \

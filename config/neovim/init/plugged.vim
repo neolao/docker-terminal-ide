@@ -18,6 +18,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'majutsushi/tagbar'
+Plug 'vimlab/split-term.vim'
 
 " Typescript
 Plug 'leafgarland/typescript-vim'

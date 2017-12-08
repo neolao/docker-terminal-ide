@@ -60,4 +60,7 @@ vmap <silent> <C-i> :copy '><cr>gv
 " Dupliquer les lignes vers le bas
 vmap <silent> <C-k> :copy '<-1<cr>gv
 
-
+" Open terminal
+map <C-k>t :Term zsh<cr>
+imap <C-k>t :Term zsh<cr>
+vmap <C-k>t :Term zsh<cr>
