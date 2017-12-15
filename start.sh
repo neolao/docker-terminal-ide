@@ -144,7 +144,7 @@ command="$command -e LAUNCHER=$LAUNCHER"
 command="$command -v '/etc/passwd:/etc/passwd:ro'"
 command="$command -v '/etc/shadow:/etc/shadow:ro'"
 command="$command -v '/etc/group:/etc/group:ro'"
-if [ -f $HOME/.ssh ]; then
+if [ -d $HOME/.ssh ]; then
     command="$command -v '$HOME/.ssh:/home/$USER/.ssh:rw'"
 fi
 if [ -f $HOME/.npmrc ]; then
