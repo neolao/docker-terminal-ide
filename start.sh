@@ -131,47 +131,53 @@ fi
 touch $currentDirectory/var/gitconfig.user
 touch $currentDirectory/var/gitconfig.aliases
 
-docker-compose run --rm \
-    -e USER_NAME=$USER \
-    -e USER_UID=$UID \
-    -e USER_GID=$GID \
-    -e FILE_TO_OPEN=$FILE_TO_OPEN \
-    -e NODEJS_DEFAULT_VERSION=$NODEJS_DEFAULT_VERSION \
-    -e NEOVIM_PLUGIN_PHPCD=$NEOVIM_PLUGIN_PHPCD \
-    -e NEOVIM_PLUGIN_TERN=$NEOVIM_PLUGIN_TERN \
-    -e TMUX=$TMUX \
-    -e LAUNCHER=$LAUNCHER \
-    -v "/etc/passwd:/etc/passwd:ro" \
-    -v "/etc/shadow:/etc/shadow:ro" \
-    -v "/etc/group:/etc/group:ro" \
-    -v "$HOME/.ssh:/home/$USER/.ssh:rw" \
-    -v "$currentDirectory/config/home/.Xdefaults:/home/$USER/.Xdefaults:ro" \
-    -v "$currentDirectory/setups:/setups:ro" \
-    -v "$currentDirectory/launchers:/launchers:ro" \
-    -v "$currentDirectory/config/git/.gitconfig:/home/$USER/.gitconfig:ro" \
-    -v "$currentDirectory/config/git/config:/git/config:ro" \
-    -v "$currentDirectory/config/git/commands:/git/commands:ro" \
-    -v "$currentDirectory/config/etc/hostname:/etc/hostname:ro" \
-    -v "$currentDirectory/config/zsh/zshrc:/home/$USER/.zshrc:ro" \
-    -v "$currentDirectory/config/zsh/oh-my-zsh:/home/$USER/.oh-my-zsh:rw" \
-    -v "$currentDirectory/config/zsh/oh-my-zsh-custom:/home/$USER/.oh-my-zsh-custom:rw" \
-    -v "$currentDirectory/config/tmux/tmux.conf:/home/$USER/.tmux.conf:ro" \
-    -v "$currentDirectory/config/twin/twinrc2:/home/$USER/.twinrc:ro" \
-    -v "$currentDirectory/config/neovim/plug.vim:/home/$USER/plug.vim:ro" \
-    -v "$currentDirectory/config/neovim/plugged:/home/$USER/.config/nvim/plugged:rw" \
-    -v "$currentDirectory/config/neovim/themes:/home/$USER/.config/nvim/themes:ro" \
-    -v "$currentDirectory/config/neovim/init:/home/$USER/.config/nvim/init:ro" \
-    -v "$currentDirectory/config/neovim/init.vim:/home/$USER/.config/nvim/init.vim:ro" \
-    -v "$currentDirectory/config/neovim/rplugin.vim:/home/$USER/.local/share/nvim/rplugin.vim:ro" \
-    -v "$currentDirectory/config/home/.nvm:/home/$USER/.nvm:rw" \
-    -v "$currentDirectory/applications:/applications:rw" \
-    -v "$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw" \
-    -v "$currentDirectory/bin/terminal-colors.py:/usr/local/bin/terminal-colors:ro" \
-    -v "$currentDirectory/var/gitconfig.user:/var/ide/git/user:ro" \
-    -v "$currentDirectory/var/gitconfig.aliases:/var/ide/git/aliases:ro" \
-    -v "/:/disk:ro" \
-    -v "$WORKSPACE:/workspace:rw" \
-    $service
+command="docker-compose run --rm"
+command="$command -e USER_NAME=$USER"
+command="$command -e USER_UID=$UID"
+command="$command -e USER_GID=$GID"
+command="$command -e FILE_TO_OPEN=$FILE_TO_OPEN"
+command="$command -e NODEJS_DEFAULT_VERSION=$NODEJS_DEFAULT_VERSION"
+command="$command -e NEOVIM_PLUGIN_PHPCD=$NEOVIM_PLUGIN_PHPCD"
+command="$command -e NEOVIM_PLUGIN_TERN=$NEOVIM_PLUGIN_TERN"
+command="$command -e TMUX=$TMUX"
+command="$command -e LAUNCHER=$LAUNCHER"
+command="$command -v '/etc/passwd:/etc/passwd:ro'"
+command="$command -v '/etc/shadow:/etc/shadow:ro'"
+command="$command -v '/etc/group:/etc/group:ro'"
+if [ -f $HOME/.ssh ]; then
+    command="$command -v '$HOME/.ssh:/home/$USER/.ssh:rw'"
+fi
+if [ -f $HOME/.npmrc ]; then
+    command="$command -v '$HOME/.npmrc:/home/$USER/.npmrc:rw'"
+fi
+command="$command -v '$currentDirectory/config/home/.Xdefaults:/home/$USER/.Xdefaults:ro'"
+command="$command -v '$currentDirectory/setups:/setups:ro'"
+command="$command -v '$currentDirectory/launchers:/launchers:ro'"
+command="$command -v '$currentDirectory/config/git/.gitconfig:/home/$USER/.gitconfig:ro'"
+command="$command -v '$currentDirectory/config/git/config:/git/config:ro'"
+command="$command -v '$currentDirectory/config/git/commands:/git/commands:ro'"
+command="$command -v '$currentDirectory/config/etc/hostname:/etc/hostname:ro'"
+command="$command -v '$currentDirectory/config/zsh/zshrc:/home/$USER/.zshrc:ro'"
+command="$command -v '$currentDirectory/config/zsh/oh-my-zsh:/home/$USER/.oh-my-zsh:rw'"
+command="$command -v '$currentDirectory/config/zsh/oh-my-zsh-custom:/home/$USER/.oh-my-zsh-custom:rw'"
+command="$command -v '$currentDirectory/config/tmux/tmux.conf:/home/$USER/.tmux.conf:ro'"
+command="$command -v '$currentDirectory/config/twin/twinrc2:/home/$USER/.twinrc:ro'"
+command="$command -v '$currentDirectory/config/neovim/plug.vim:/home/$USER/plug.vim:ro'"
+command="$command -v '$currentDirectory/config/neovim/plugged:/home/$USER/.config/nvim/plugged:rw'"
+command="$command -v '$currentDirectory/config/neovim/themes:/home/$USER/.config/nvim/themes:ro'"
+command="$command -v '$currentDirectory/config/neovim/init:/home/$USER/.config/nvim/init:ro'"
+command="$command -v '$currentDirectory/config/neovim/init.vim:/home/$USER/.config/nvim/init.vim:ro'"
+command="$command -v '$currentDirectory/config/neovim/rplugin.vim:/home/$USER/.local/share/nvim/rplugin.vim:ro'"
+command="$command -v '$currentDirectory/config/home/.nvm:/home/$USER/.nvm:rw'"
+command="$command -v '$currentDirectory/applications:/applications:rw'"
+command="$command -v '$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw'"
+command="$command -v '$currentDirectory/bin/terminal-colors.py:/usr/local/bin/terminal-colors:ro'"
+command="$command -v '$currentDirectory/var/gitconfig.user:/var/ide/git/user:ro'"
+command="$command -v '$currentDirectory/var/gitconfig.aliases:/var/ide/git/aliases:ro'"
+command="$command -v '/:/disk:ro'"
+command="$command -v '$WORKSPACE:/workspace:rw'"
+command="$command $service"
+eval $command
 
 if [ "$MULTIPLE" -eq 0 ]
 then
