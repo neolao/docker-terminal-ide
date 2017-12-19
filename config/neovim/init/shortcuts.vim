@@ -32,6 +32,12 @@ vmap <F8> <Esc><F8>
 map <silent> <C-d> :delete<cr>
 imap <C-d> <Esc><C-d>:startinsert<cr>
 
+" Déplacer d'un mot
+imap <C-w> <Esc><right>wi
+"map <C-w> w
+imap <C-b> <Esc>bi
+"map <C-b> b
+
 " Déplacer la ligne vers le haut
 map <silent> <C-u> :.move .-2<cr>
 imap <C-u> <Esc><C-u>:startinsert<cr>
@@ -64,3 +70,13 @@ vmap <silent> <C-k> :copy '<-1<cr>gv
 map <C-k>t :Term zsh<cr>
 imap <C-k>t :Term zsh<cr>
 vmap <C-k>t :Term zsh<cr>
+
+" Undo: Ctrl+z
+map <silent> <C-z> :undo<CR>
+imap <C-z> <Esc><C-z>
+vmap <C-z> <Esc><C-z>
+
+" Select all: Ctrl+a
+map <C-a> ggVG
+imap <C-a> <Esc><C-a>
+vmap <C-a> <Esc><C-a>
