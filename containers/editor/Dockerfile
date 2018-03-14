@@ -48,13 +48,29 @@ ENV LC_ALL en_US.UTF-8
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 RUN dpkg-reconfigure --frontend=noninteractive locales
 
-# Packes for twin
+# Packages for twin
 RUN apt-get update && apt-get install -y gcc cmake libx11-dev libxpm-dev libncurses-dev zlib1g-dev libgpm-dev
 
 # Build twin
 RUN git clone https://github.com/cosmos72/twin.git
 RUN cd twin && ./configure
 RUN cd twin && make && make install
+
+# Packages for libgit2
+#RUN apt-get update && apt-get install -y cmake python3 gcc libssl-dev
+
+# Build libgit2
+#RUN git clone https://github.com/libgit2/libgit2.git
+#RUN cd libgit2 && mkdir build && cd build && cmake .. && cmake --build .
+
+# Packages for GRV
+RUN apt-get update && apt-get install -y golang cmake libcurl3-dev libreadline-dev libncursesw5-dev wget
+
+# Build GRV
+RUN mkdir /go
+ENV GOPATH /go
+RUN wget -O grv https://github.com/rgburke/grv/releases/download/v0.1.3/grv_v0.1.3_linux64
+RUN chmod +x /grv
 
 # Volume
 RUN mkdir /workspace
