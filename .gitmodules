@@ -73,3 +73,12 @@
 [submodule "config/neovim/plugged/split-term.vim"]
 	path = config/neovim/plugged/split-term.vim
 	url = https://github.com/vimlab/split-term.vim.git
+[submodule "config/neovim/plugged/vim-polyglot"]
+	path = config/neovim/plugged/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "config/neovim/plugged/vim-jinja"]
+	path = config/neovim/plugged/vim-jinja
+	url = https://github.com/niftylettuce/vim-jinja.git
+[submodule "config/neovim/plugged/neovim-fuzzy"]
+	path = config/neovim/plugged/neovim-fuzzy
+	url = https://github.com/cloudhead/neovim-fuzzy.git

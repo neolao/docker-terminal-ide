@@ -72,6 +72,10 @@ ENV GOPATH /go
 RUN wget -O grv https://github.com/rgburke/grv/releases/download/v0.1.3/grv_v0.1.3_linux64
 RUN chmod +x /grv
 
+# Install Fuzzy Finder
+RUN git clone --depth 1 https://github.com/junegunn/fzf.git /fzf
+RUN /fzf/install
+
 # Volume
 RUN mkdir /workspace
 VOLUME ["/workspace"]
