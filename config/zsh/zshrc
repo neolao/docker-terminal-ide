@@ -97,6 +97,22 @@ then
     source ~/.nvm/nvm.sh
 fi
 
+# Fuzzy Finder
+if [ -f /fzf/bin/fzf ]
+then
+    export PATH="$PATH:/fzf/bin"
+fi
+if [ -f ~/.fzf.zsh ]
+then
+    source ~/.fzf.zsh
+fi
+
+# TMUX
+if [ -f /tmux/tmux ]
+then
+    export PATH="$PATH:/tmux"
+fi
+
 # Default directory
 cd /workspace
 

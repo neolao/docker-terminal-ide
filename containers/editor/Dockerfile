@@ -75,6 +75,11 @@ RUN chmod +x /grv
 # Install Fuzzy Finder
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git /fzf
 RUN /fzf/install
+RUN ln -s /fzf/bin/fzf /fzf/bin/fzy
+
+# Install RipGrep
+RUN curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.8.1/ripgrep_0.8.1_amd64.deb
+RUN dpkg -i ripgrep_0.8.1_amd64.deb
 
 # Volume
 RUN mkdir /workspace

@@ -150,6 +150,7 @@ fi
 if [ -f $HOME/.npmrc ]; then
     command="$command -v '$HOME/.npmrc:/home/$USER/.npmrc:rw'"
 fi
+command="$command -v '$currentDirectory/config/home/.fzf.zsh:/home/$USER/.fzf.zsh:ro'"
 command="$command -v '$currentDirectory/config/home/.Xdefaults:/home/$USER/.Xdefaults:ro'"
 command="$command -v '$currentDirectory/setups:/setups:ro'"
 command="$command -v '$currentDirectory/launchers:/launchers:ro'"

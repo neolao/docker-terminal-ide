@@ -19,6 +19,9 @@ Plug 'Shougo/denite.nvim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'majutsushi/tagbar'
 Plug 'vimlab/split-term.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'niftylettuce/vim-jinja'
+Plug 'cloudhead/neovim-fuzzy'
 
 " Typescript
 Plug 'leafgarland/typescript-vim'
