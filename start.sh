@@ -149,6 +149,10 @@ if [ -d $HOME/.ssh ]; then
 fi
 if [ -f $HOME/.npmrc ]; then
     command="$command -v '$HOME/.npmrc:/home/$USER/.npmrc:rw'"
+else
+    if [ -f $currentDirectory/var/npmrc ]; then
+        command="$command -v '$currentDirectory/var/npmrc:/home/$USER/.npmrc:rw'"
+    fi
 fi
 command="$command -v '$currentDirectory/config/home/.fzf.zsh:/home/$USER/.fzf.zsh:ro'"
 command="$command -v '$currentDirectory/config/home/.Xdefaults:/home/$USER/.Xdefaults:ro'"
