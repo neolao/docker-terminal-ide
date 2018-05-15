@@ -81,6 +81,9 @@ RUN ln -s /fzf/bin/fzf /fzf/bin/fzy
 RUN curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.8.1/ripgrep_0.8.1_amd64.deb
 RUN dpkg -i ripgrep_0.8.1_amd64.deb
 
+# Install HTOP
+RUN apt-get update && apt-get install -y htop
+
 # Volume
 RUN mkdir /workspace
 VOLUME ["/workspace"]
