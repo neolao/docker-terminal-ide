@@ -158,7 +158,7 @@ command="$command -v '$currentDirectory/config/home/.fzf.zsh:/home/$USER/.fzf.zs
 command="$command -v '$currentDirectory/config/home/.Xdefaults:/home/$USER/.Xdefaults:ro'"
 command="$command -v '$currentDirectory/setups:/setups:ro'"
 command="$command -v '$currentDirectory/launchers:/launchers:ro'"
-command="$command -v '$currentDirectory/config/git/.gitconfig:/home/$USER/.gitconfig:ro'"
+command="$command -v '$currentDirectory/config/git/gitconfig:/home/$USER/.gitconfig:ro'"
 command="$command -v '$currentDirectory/config/git/config:/git/config:ro'"
 command="$command -v '$currentDirectory/config/git/commands:/git/commands:ro'"
 command="$command -v '$currentDirectory/config/etc/hostname:/etc/hostname:ro'"
@@ -182,6 +182,8 @@ command="$command -v '$currentDirectory/var/gitconfig.aliases:/var/ide/git/alias
 command="$command -v '/:/disk:ro'"
 command="$command -v '$WORKSPACE:/workspace:rw'"
 command="$command $service"
+
+echo -e "\033[41;37m      START IDE      \033[0m"
 eval $command
 
 if [ "$MULTIPLE" -eq 0 ]
