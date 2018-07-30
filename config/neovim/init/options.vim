@@ -184,6 +184,7 @@ filetype on
 filetype plugin on
 au BufRead,BufNewFile *.md      set filetype=markdown
 au BufRead,BufNewFile *.js      set filetype=javascript
+au BufRead,BufNewFile *.gs      set filetype=javascript
 au BufRead,BufNewFile *.as      set filetype=actionscript
 au BufRead,BufNewFile *.css     set filetype=css
 au BufRead,BufNewFile *.scss    set filetype=scss
