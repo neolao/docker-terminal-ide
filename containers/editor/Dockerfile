@@ -28,10 +28,10 @@ RUN cd editorconfig-core-c && cmake . && make install && rm /usr/local/bin/edito
 RUN cd ../
 
 # Build neovim
+RUN apt-get update && apt-get install -y gettext python3-pip
 RUN git clone https://github.com/neovim/neovim.git nvim
 RUN cd nvim && make CMAKE_BUILD_TYPE=RelWithDebInfo && make install
 RUN cd ../ && rm -rf nvim
-RUN apt-get update && apt-get install -y python3-pip
 RUN pip3 install neovim
 
 # Install ctags
