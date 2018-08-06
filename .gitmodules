@@ -82,3 +82,6 @@
 [submodule "config/neovim/plugged/neovim-fuzzy"]
 	path = config/neovim/plugged/neovim-fuzzy
 	url = https://github.com/cloudhead/neovim-fuzzy.git
+[submodule "config/neovim/plugged/vim-prettier"]
+	path = config/neovim/plugged/vim-prettier
+	url = https://github.com/prettier/vim-prettier.git

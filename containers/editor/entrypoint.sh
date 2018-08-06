@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Add the user to sudoers
-echo "- Add the user \"$$USER_NAME\" to sudoers"
+echo "- Add the user \"$USER_NAME\" to sudoers"
 echo "$USER_NAME  ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$USER_NAME
 chmod 440 /etc/sudoers.d/$USER_NAME
 
