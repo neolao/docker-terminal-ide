@@ -1,11 +1,9 @@
 #!/bin/bash
 
-currentDirectory=$(dirname $0)
 realpathBinary=$(which realpath)
-
-if [ ! -x $realpathBinary ]
+if [ ! -x $realpathBinary ] || [ "$realpathBinary" == "" ]
 then
-    realpathBinary=$currentDirectory/applications/realpath/realpath
+    realpathBinary=$(dirname $0)/applications/realpath/realpath
 fi
 
 scriptPath=$($realpathBinary $0)
@@ -89,7 +87,7 @@ done
 # Select the workspace
 if [ -n "$target" ]
 then
-    export WORKSPACE=$(realpath $target)
+    export WORKSPACE=$($realpathBinary $target)
 fi
 if [ -f $WORKSPACE ]
 then
