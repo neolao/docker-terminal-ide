@@ -23,9 +23,11 @@ RUN cd tmux && ./configure
 RUN cd tmux && make
 
 # Build editorconfig core
-RUN git clone https://github.com/editorconfig/editorconfig-core-c.git
-RUN cd editorconfig-core-c && cmake . && make install && rm /usr/local/bin/editorconfig && ln -s /editorconfig-core-c/bin/editorconfig /usr/local/bin/editorconfig
-RUN cd ../
+RUN apt-get install -y editorconfig
+#RUN apt-get install -y cmake libpcre3-dev
+#RUN git clone https://github.com/editorconfig/editorconfig-core-c.git
+#RUN cd editorconfig-core-c && cmake . && make install && rm /usr/local/bin/editorconfig && ln -s /editorconfig-core-c/bin/editorconfig /usr/local/bin/editorconfig
+#RUN cd ../
 
 # Build neovim
 RUN apt-get update && apt-get install -y gettext python3-pip

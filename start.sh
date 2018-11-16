@@ -11,7 +11,7 @@ currentDirectory=$(dirname $scriptPath)
 
 # Default parameters
 export USER_NAME=$USER
-export USER_UID=$UID
+export USER_UID=$(id -u)
 export USER_GID=$(id -g)
 export LAUNCHER=/launchers/nvim.sh
 export SERVICE_SMARTGIT=0
@@ -23,6 +23,13 @@ export NEOVIM_PLUGIN_TERN=0
 export START_TMUX=0
 export START_TWIN=0
 export MULTIPLE=1
+
+# MacOS
+platform=$(uname)
+if [[ $platform == 'Darwin' ]]; then
+  echo "MacOS detected"
+fi
+
 
 # Options
 target="."
@@ -130,18 +137,18 @@ touch $currentDirectory/var/gitconfig.user
 touch $currentDirectory/var/gitconfig.aliases
 
 command="docker-compose run --rm"
-command="$command -e USER_NAME=$USER"
-command="$command -e USER_UID=$UID"
-command="$command -e USER_GID=$GID"
+command="$command -e USER_NAME=$USER_NAME"
+command="$command -e USER_UID=$USER_UID"
+command="$command -e USER_GID=$USER_GID"
 command="$command -e FILE_TO_OPEN=$FILE_TO_OPEN"
 command="$command -e NODEJS_DEFAULT_VERSION=$NODEJS_DEFAULT_VERSION"
 command="$command -e NEOVIM_PLUGIN_PHPCD=$NEOVIM_PLUGIN_PHPCD"
 command="$command -e NEOVIM_PLUGIN_TERN=$NEOVIM_PLUGIN_TERN"
 command="$command -e TMUX=$TMUX"
 command="$command -e LAUNCHER=$LAUNCHER"
-command="$command -v '/etc/passwd:/etc/passwd:ro'"
-command="$command -v '/etc/shadow:/etc/shadow:ro'"
-command="$command -v '/etc/group:/etc/group:ro'"
+#command="$command -v '/etc/passwd:/etc/passwd:ro'"
+#command="$command -v '/etc/shadow:/etc/shadow:ro'"
+#command="$command -v '/etc/group:/etc/group:ro'"
 if [ -d $HOME/.ssh ]; then
     command="$command -v '$HOME/.ssh:/home/$USER/.ssh:rw'"
 fi
