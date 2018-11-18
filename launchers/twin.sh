@@ -12,7 +12,6 @@ cols=$(tput cols)
 #stty rows $lines
 #stty cols $cols
 
-echo "Setup ..."
 /setups/auto.sh
 
 echo "Starting TWIN ..."

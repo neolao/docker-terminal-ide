@@ -20,6 +20,7 @@ export WORKSPACE=$(pwd)
 export NODEJS_DEFAULT_VERSION=0
 export NEOVIM_PLUGIN_PHPCD=0
 export NEOVIM_PLUGIN_TERN=0
+export NEOVIM_PLUGIN_PRETTIER=0
 export START_TMUX=0
 export START_TWIN=0
 export MULTIPLE=1
@@ -58,6 +59,7 @@ while test $# -gt 0; do
             option=$1
             export NODEJS_DEFAULT_VERSION=${option:9}
             export NEOVIM_PLUGIN_TERN=1
+            export NEOVIM_PLUGIN_PRETTIER=1
             shift
             ;;
 
