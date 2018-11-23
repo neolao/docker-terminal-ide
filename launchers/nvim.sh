@@ -6,7 +6,6 @@ TERM="screen-256color"
 export HOME
 export TERM
 
-echo "Setup ..."
 /setups/auto.sh
 
 cd /workspace
