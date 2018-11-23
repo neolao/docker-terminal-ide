@@ -77,6 +77,7 @@ endif
 
 " Quand un fichier est changé en dehors de Vim, il est relu automatiquement
 set autoread
+au CursorHold * checktime
 
 " Aucun son ou affichage lors des erreurs
 set errorbells

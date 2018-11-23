@@ -84,6 +84,10 @@ RUN dpkg -i ripgrep_0.8.1_amd64.deb
 # Install HTOP
 RUN apt-get update && apt-get install -y htop
 
+# Install Git LFS
+RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+RUN apt-get install -y git-lfs
+
 # Volume
 RUN mkdir /workspace
 VOLUME ["/workspace"]
