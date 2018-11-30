@@ -85,3 +85,6 @@
 [submodule "config/neovim/plugged/vim-prettier"]
 	path = config/neovim/plugged/vim-prettier
 	url = https://github.com/prettier/vim-prettier.git
+[submodule "config/neovim/plugged/ctrlsf.vim"]
+	path = config/neovim/plugged/ctrlsf.vim
+	url = https://github.com/dyng/ctrlsf.vim

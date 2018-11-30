@@ -28,6 +28,11 @@ vmap <C-l> <Esc> :execute ToggleTagBar()<cr>
 imap <F8> <Esc><F8>
 vmap <F8> <Esc><F8>
 
+" Ctrl+f : [PLUGIN] CtrlSF
+map <C-f> <Esc> :CtrlSF 
+imap <C-f> <Esc> :CtrlSF 
+vmap <C-f> <Esc> :CtrlSF 
+
 " Supprimer une ligne
 map <silent> <C-d> :delete<cr>
 imap <C-d> <Esc><C-d>:startinsert<cr>

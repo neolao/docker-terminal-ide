@@ -23,6 +23,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'niftylettuce/vim-jinja'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'prettier/vim-prettier', {'do' : 'npm install', 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue']}
+Plug 'dyng/ctrlsf.vim'
 
 " Typescript
 Plug 'leafgarland/typescript-vim'
