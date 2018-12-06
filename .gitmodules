@@ -88,3 +88,6 @@
 [submodule "config/neovim/plugged/ctrlsf.vim"]
 	path = config/neovim/plugged/ctrlsf.vim
 	url = https://github.com/dyng/ctrlsf.vim
+[submodule "config/neovim/plugged/ctrlp.vim"]
+	path = config/neovim/plugged/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim

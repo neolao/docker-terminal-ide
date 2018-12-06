@@ -33,6 +33,11 @@ map <C-f> <Esc> :CtrlSF
 imap <C-f> <Esc> :CtrlSF 
 vmap <C-f> <Esc> :CtrlSF 
 
+" Ctrl+p : [PLUGIN] CtrlP
+map <C-p> <Esc> :CtrlP .<cr>
+imap <C-p> <Esc> :CtrlP .<cr>
+vmap <C-p> <Esc> :CtrlP .<cr>
+
 " Supprimer une ligne
 map <silent> <C-d> :delete<cr>
 imap <C-d> <Esc><C-d>:startinsert<cr>
