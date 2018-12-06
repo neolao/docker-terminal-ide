@@ -20,6 +20,11 @@ map <silent> <F4> :NERDTreeFind<cr>
 imap <F4> <Esc><F4>
 vmap <F4> <Esc><F4>
 
+" Ctrl+m : [PLUGIN] NerdTree
+map <C-m> <Esc> :NERDTreeFind<cr>
+imap <C-m> <Esc> :NERDTreeFind<cr>
+vmap <C-m> <Esc> :NERDTreeFind<cr>
+
 " F8 : [PLUGIN] TagBar
 map <silent> <F8> :execute ToggleTagBar()<cr>
 map <C-l> :execute ToggleTagBar()<cr>
