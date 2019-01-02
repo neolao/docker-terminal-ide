@@ -10,5 +10,6 @@ source ~/.config/nvim/init/plugin_tagbar.vim
 source ~/.config/nvim/init/plugin_split-term.vim
 source ~/.config/nvim/init/plugin_ctrlsf.vim
 source ~/.config/nvim/init/plugin_ctrlp.vim
+source ~/.config/nvim/init/plugin_better-whitespace.vim
 source ~/.config/nvim/init/shortcuts.vim
 

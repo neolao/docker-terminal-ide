@@ -91,3 +91,6 @@
 [submodule "config/neovim/plugged/ctrlp.vim"]
 	path = config/neovim/plugged/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "config/neovim/plugged/vim-better-whitespace"]
+	path = config/neovim/plugged/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace
