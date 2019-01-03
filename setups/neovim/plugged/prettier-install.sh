@@ -12,6 +12,6 @@ fi
 (
 
     cd ~/.config/nvim/plugged/vim-prettier
-    npm install
+    npm install --no-package-lock
 ) 2>&1 | trace_output
 
