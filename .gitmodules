@@ -37,18 +37,12 @@
 [submodule "config/neovim/plugged/denite.nvim"]
 	path = config/neovim/plugged/denite.nvim
 	url = https://github.com/Shougo/denite.nvim.git
-[submodule "config/neovim/plugged/phpcomplete-extended"]
-	path = config/neovim/plugged/phpcomplete-extended
-	url = https://github.com/m2mdas/phpcomplete-extended.git
 [submodule "config/neovim/plugged/deoplete.nvim"]
 	path = config/neovim/plugged/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim.git
 [submodule "config/neovim/plugged/phpcd.vim"]
 	path = config/neovim/plugged/phpcd.vim
 	url = https://github.com/lvht/phpcd.vim.git
-[submodule "config/neovim/plugged/taglist.vim"]
-	path = config/neovim/plugged/taglist.vim
-	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "config/neovim/plugged/tagbar"]
 	path = config/neovim/plugged/tagbar
 	url = https://github.com/majutsushi/tagbar.git
