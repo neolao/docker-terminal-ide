@@ -88,3 +88,6 @@
 [submodule "config/neovim/plugged/vim-better-whitespace"]
 	path = config/neovim/plugged/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace
+[submodule "config/neovim/plugged/ale"]
+	path = config/neovim/plugged/ale
+	url = https://github.com/w0rp/ale.git
