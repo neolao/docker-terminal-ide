@@ -26,7 +26,7 @@ Plug 'prettier/vim-prettier', {'do' : 'npm install', 'for' : ['javascript', 'typ
 Plug 'dyng/ctrlsf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
-# Linter
+" Linter
 Plug 'w0rp/ale'
 
 " To display and auto remove whitespace
