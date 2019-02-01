@@ -18,5 +18,6 @@ fi
     npm_path=$(which npm)
     sudo ln -s $node_path /usr/local/bin/node
     sudo ln -s $npm_path /usr/local/bin/npm
+    npm install -g yarn
 ) 2>&1 | trace_output
 

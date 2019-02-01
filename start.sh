@@ -57,7 +57,7 @@ while test $# -gt 0; do
 
         --nodejs=*)
             option=$1
-            export NODEJS_DEFAULT_VERSION=${option:9}
+            export NODEJS_DEFAULT_VERSION=${option:11}
             export NEOVIM_PLUGIN_TERN=1
             export NEOVIM_PLUGIN_PRETTIER=1
             shift
@@ -187,6 +187,8 @@ command="$command -v '$currentDirectory/bin/composer.phar:/usr/local/bin/compose
 command="$command -v '$currentDirectory/bin/terminal-colors.py:/usr/local/bin/terminal-colors:ro'"
 command="$command -v '$currentDirectory/var/gitconfig.user:/var/ide/git/user:ro'"
 command="$command -v '$currentDirectory/var/gitconfig.aliases:/var/ide/git/aliases:ro'"
+command="$command -v '$currentDirectory/var/.npm:/home/$USER/.npm:rw'"
+command="$command -v '$currentDirectory/var/.cache:/home/$USER/.cache:rw'"
 command="$command -v '/:/disk:ro'"
 command="$command -v '$WORKSPACE:/workspace:rw'"
 command="$command $service"
