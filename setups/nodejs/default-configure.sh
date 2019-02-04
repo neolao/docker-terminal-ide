@@ -11,6 +11,10 @@ fi
 
 . /setups/util/trace_output.sh
 (
+    # Fix MacOS
+    sudo mkdir /Users
+    sudo chmod 777 /Users
+
     . ~/.nvm/nvm.sh
     export NVM_DIR=$(realpath ~/.nvm)
     nvm install $NODEJS_DEFAULT_VERSION

@@ -57,7 +57,7 @@ while test $# -gt 0; do
 
         --nodejs=*)
             option=$1
-            export NODEJS_DEFAULT_VERSION=${option:11}
+            export NODEJS_DEFAULT_VERSION=${option:9}
             export NEOVIM_PLUGIN_TERN=1
             export NEOVIM_PLUGIN_PRETTIER=1
             shift
