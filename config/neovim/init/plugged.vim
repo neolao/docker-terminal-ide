@@ -28,7 +28,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 " Snippet
 Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 
 " Linter
 Plug 'w0rp/ale'

@@ -183,6 +183,7 @@ command="$command -v '$currentDirectory/config/neovim/themes:/home/$USER/.config
 command="$command -v '$currentDirectory/config/neovim/init:/home/$USER/.config/nvim/init:ro'"
 command="$command -v '$currentDirectory/config/neovim/init.vim:/home/$USER/.config/nvim/init.vim:ro'"
 command="$command -v '$currentDirectory/config/neovim/rplugin.vim:/home/$USER/.local/share/nvim/rplugin.vim:rw'"
+command="$command -v '$currentDirectory/config/neovim/snippets:/home/$USER/.snippets:rw'"
 command="$command -v '$currentDirectory/config/home/.nvm:/home/$USER/.nvm:rw'"
 command="$command -v '$currentDirectory/applications:/applications:rw'"
 command="$command -v '$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw'"
