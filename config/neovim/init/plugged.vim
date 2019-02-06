@@ -26,6 +26,10 @@ Plug 'prettier/vim-prettier', {'do' : 'npm install', 'for' : ['javascript', 'typ
 Plug 'dyng/ctrlsf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
+" Snippet
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+
 " Linter
 Plug 'w0rp/ale'
 

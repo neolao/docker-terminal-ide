@@ -17,6 +17,7 @@ chmod 440 /etc/sudoers.d/$USER_NAME
 echo "- Setup home permission: /home/$USER_NAME"
 mkdir -p /home/$USER_NAME/.config
 chown -R $USER_NAME:$USER_NAME /home/$USER_NAME > /dev/null 2>&1
+chsh -s /bin/zsh $USER_NAME
 
 # Launch
 if [ -n "$LAUNCHER" ]

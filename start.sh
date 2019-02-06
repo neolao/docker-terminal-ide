@@ -137,6 +137,7 @@ fi
 
 touch $currentDirectory/var/gitconfig.user
 touch $currentDirectory/var/gitconfig.aliases
+touch $currentDirectory/var/.NERDTreeBookmarks
 
 command="docker-compose run --rm"
 command="$command -e USER_NAME=$USER_NAME"
@@ -162,6 +163,7 @@ else
         command="$command -v '$currentDirectory/var/npmrc:/home/$USER/.npmrc:rw'"
     fi
 fi
+command="$command -v '$currentDirectory/config/home/help.md:/home/$USER/help.md:ro'"
 command="$command -v '$currentDirectory/config/home/.fzf.zsh:/home/$USER/.fzf.zsh:ro'"
 command="$command -v '$currentDirectory/config/home/.Xdefaults:/home/$USER/.Xdefaults:ro'"
 command="$command -v '$currentDirectory/setups:/setups:ro'"
@@ -189,6 +191,7 @@ command="$command -v '$currentDirectory/var/gitconfig.user:/var/ide/git/user:ro'
 command="$command -v '$currentDirectory/var/gitconfig.aliases:/var/ide/git/aliases:ro'"
 command="$command -v '$currentDirectory/var/.npm:/home/$USER/.npm:rw'"
 command="$command -v '$currentDirectory/var/.cache:/home/$USER/.cache:rw'"
+command="$command -v '$currentDirectory/var/.NERDTreeBookmarks:/home/$USER/.NERDTreeBookmarks:rw'"
 command="$command -v '/:/disk:ro'"
 command="$command -v '$WORKSPACE:/workspace:rw'"
 command="$command $service"

@@ -34,9 +34,9 @@ imap <F8> <Esc><F8>
 vmap <F8> <Esc><F8>
 
 " Ctrl+f : [PLUGIN] CtrlSF
-map <C-f> <Esc> :CtrlSF 
-imap <C-f> <Esc> :CtrlSF 
-vmap <C-f> <Esc> :CtrlSF 
+map <C-f> <Esc> :CtrlSF
+imap <C-f> <Esc> :CtrlSF
+vmap <C-f> <Esc> :CtrlSF
 
 " Ctrl+o : [PLUGIN] CtrlP
 map <C-o> <Esc> :CtrlP .<cr>
@@ -95,3 +95,8 @@ vmap <C-z> <Esc><C-z>
 map <C-a> ggVG
 imap <C-a> <Esc><C-a>
 vmap <C-a> <Esc><C-a>
+
+" Ctrl+x : [PLUGIN] neosnippet
+imap <C-x>     <Plug>(neosnippet_expand_or_jump)
+smap <C-x>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-x>     <Plug>(neosnippet_expand_target)

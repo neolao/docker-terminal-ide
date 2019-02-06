@@ -90,6 +90,10 @@ RUN apt-get update && apt-get install -y htop
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 RUN apt-get install -y git-lfs
 
+# Install Terminal Markdown Viewer
+RUN apt-get install -y python-pip
+RUN pip install mdv
+
 # Volume
 RUN mkdir /workspace
 VOLUME ["/workspace"]
