@@ -36,6 +36,9 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 
+" Dockerfil
+Plug 'ekalinin/Dockerfile.vim'
+
 Plug 'vim-syntastic/syntastic'
 
 if $NEOVIM_PLUGIN_TERN

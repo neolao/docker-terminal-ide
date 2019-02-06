@@ -20,6 +20,11 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='white'
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='blue'
 
+# Key binding
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
 
 # Locale
 LC_CTYPE=en_US.UTF-8

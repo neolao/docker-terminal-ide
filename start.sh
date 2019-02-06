@@ -57,7 +57,7 @@ while test $# -gt 0; do
 
         --nodejs=*)
             option=$1
-            export NODEJS_DEFAULT_VERSION=${option:11}
+            export NODEJS_DEFAULT_VERSION=${option:9}
             export NEOVIM_PLUGIN_TERN=1
             export NEOVIM_PLUGIN_PRETTIER=1
             shift
@@ -180,7 +180,7 @@ command="$command -v '$currentDirectory/config/neovim/plugged:/home/$USER/.confi
 command="$command -v '$currentDirectory/config/neovim/themes:/home/$USER/.config/nvim/themes:ro'"
 command="$command -v '$currentDirectory/config/neovim/init:/home/$USER/.config/nvim/init:ro'"
 command="$command -v '$currentDirectory/config/neovim/init.vim:/home/$USER/.config/nvim/init.vim:ro'"
-command="$command -v '$currentDirectory/config/neovim/rplugin.vim:/home/$USER/.local/share/nvim/rplugin.vim:ro'"
+command="$command -v '$currentDirectory/config/neovim/rplugin.vim:/home/$USER/.local/share/nvim/rplugin.vim:rw'"
 command="$command -v '$currentDirectory/config/home/.nvm:/home/$USER/.nvm:rw'"
 command="$command -v '$currentDirectory/applications:/applications:rw'"
 command="$command -v '$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw'"
