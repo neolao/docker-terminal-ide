@@ -97,6 +97,15 @@ imap <C-a> <Esc><C-a>
 vmap <C-a> <Esc><C-a>
 
 " Ctrl+x : [PLUGIN] neosnippet
-imap <C-x>     <Plug>(neosnippet_expand_or_jump)
-smap <C-x>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-x>     <Plug>(neosnippet_expand_target)
+"imap <C-x>     <Plug>(neosnippet_expand_or_jump)
+"smap <C-x>     <Plug>(neosnippet_expand_or_jump)
+"xmap <C-x>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <expr><TAB>
+\ pumvisible() ? "\<C-x>" :
+\ neosnippet#expandable_or_jumpable() ?
+\    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"

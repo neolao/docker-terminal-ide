@@ -91,8 +91,11 @@ RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.d
 RUN apt-get install -y git-lfs
 
 # Install Terminal Markdown Viewer
-RUN apt-get install -y python-pip
-RUN pip install mdv
+RUN apt-get install -y python3-pip
+RUN pip3 install mdv
+
+# Vim plugin: YouCompleteMe
+RUN apt-get install -y build-essential cmake python3-dev
 
 # Volume
 RUN mkdir /workspace

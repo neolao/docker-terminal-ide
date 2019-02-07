@@ -4,19 +4,22 @@ if filereadable(expand("~/plug.vim"))
 endif
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'tpope/vim-sensible'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'editorconfig/editorconfig-vim'
+" UI
 Plug 'itchyny/lightline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'powerline/powerline'
-Plug 'isRuslan/vim-es6'
 Plug '~/.config/nvim/themes'
+
+" File explorer
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+Plug 'tpope/vim-sensible'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'isRuslan/vim-es6'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/denite.nvim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'majutsushi/tagbar'
 Plug 'vimlab/split-term.vim'
 Plug 'sheerun/vim-polyglot'
@@ -25,6 +28,9 @@ Plug 'cloudhead/neovim-fuzzy'
 Plug 'prettier/vim-prettier', {'do' : 'npm install', 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue']}
 Plug 'dyng/ctrlsf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+
+" Auto complete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Snippet
 Plug 'Shougo/neosnippet.vim'

@@ -11,7 +11,6 @@ call remote#host#RegisterPlugin('python3', '/home/neolao/.config/nvim/plugged/de
 
 " ruby plugins
 
-
 " python plugins
 
 

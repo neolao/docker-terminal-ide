@@ -184,6 +184,7 @@ command="$command -v '$currentDirectory/config/neovim/init:/home/$USER/.config/n
 command="$command -v '$currentDirectory/config/neovim/init.vim:/home/$USER/.config/nvim/init.vim:ro'"
 command="$command -v '$currentDirectory/config/neovim/rplugin.vim:/home/$USER/.local/share/nvim/rplugin.vim:rw'"
 command="$command -v '$currentDirectory/config/neovim/snippets:/home/$USER/.snippets:rw'"
+command="$command -v '$currentDirectory/config/neovim/snippets:/home/$USER/.vim/UltiSnips:rw'"
 command="$command -v '$currentDirectory/config/home/.nvm:/home/$USER/.nvm:rw'"
 command="$command -v '$currentDirectory/applications:/applications:rw'"
 command="$command -v '$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw'"
