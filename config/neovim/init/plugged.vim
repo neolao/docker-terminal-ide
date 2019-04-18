@@ -29,6 +29,9 @@ Plug 'prettier/vim-prettier', {'do' : 'npm install', 'for' : ['javascript', 'typ
 Plug 'dyng/ctrlsf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
+" NPM
+Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
+
 " Auto complete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -46,7 +49,10 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 
-" Dockerfil
+" styled components
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+" Dockerfile
 Plug 'ekalinin/Dockerfile.vim'
 
 Plug 'vim-syntastic/syntastic'
