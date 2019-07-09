@@ -20,7 +20,7 @@ options="-2 -S /tmp/tmux.pid -f $HOME/.tmux.conf"
 /tmux/tmux $options new-session -d -s $SESSION
 if [ "$FILE_TO_OPEN" == "" ]
 then
-    /tmux/tmux $options new-window -t $SESSION:1 -k -n EDITOR "cd /workspace && nvim"
+    /tmux/tmux $options new-window -t $SESSION:1 -k -n EDITOR "source ~/.zshrc 2> /dev/null && cd /workspace && nvim"
 else
     /tmux/tmux $options new-window -t $SESSION:1 -k -n EDITOR "cd /workspace && nvim $FILE_TO_OPEN"
 fi

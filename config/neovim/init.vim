@@ -13,5 +13,6 @@ source ~/.config/nvim/init/plugin_ctrlp.vim
 source ~/.config/nvim/init/plugin_better-whitespace.vim
 source ~/.config/nvim/init/plugin_ale.vim
 source ~/.config/nvim/init/plugin_neosnippet.vim
+source ~/.config/nvim/init/plugin_tsuquyomi.vim
 source ~/.config/nvim/init/shortcuts.vim
 

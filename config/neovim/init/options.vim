@@ -191,4 +191,7 @@ au BufRead,BufNewFile *.css     set filetype=css
 au BufRead,BufNewFile *.scss    set filetype=scss
 au BufRead,BufNewFile *.php     set filetype=php
 
-
+" Auto completion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone

@@ -44,7 +44,7 @@ Plug 'ntpeters/vim-better-whitespace'
 
 " Typescript
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
+Plug 'Quramy/tsuquyomi', {'do' : 'npm install -g typescript'}
 
 " Dockerfil
 Plug 'ekalinin/Dockerfile.vim'

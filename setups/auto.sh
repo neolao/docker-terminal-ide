@@ -9,12 +9,14 @@ cd $currentDirectory
 
 # Configure
 for file in $(find ./**/* -name '*-configure.sh')
-do 
+do
     sh $file
 done
 
 # Install
 for file in $(find ./**/* -name '*-install.sh')
-do 
+do
     sh $file
 done
+
+source ~/.zshrc 2> /dev/null

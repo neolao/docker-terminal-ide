@@ -21,6 +21,7 @@ export NODEJS_DEFAULT_VERSION=0
 export NEOVIM_PLUGIN_PHPCD=0
 export NEOVIM_PLUGIN_TERN=0
 export NEOVIM_PLUGIN_PRETTIER=0
+export TYPESCRIPT=0
 export START_TMUX=0
 export START_TWIN=0
 export MULTIPLE=1
@@ -61,6 +62,10 @@ while test $# -gt 0; do
             export NODEJS_DEFAULT_VERSION=${option:9}
             export NEOVIM_PLUGIN_TERN=1
             export NEOVIM_PLUGIN_PRETTIER=1
+            shift
+            ;;
+        --typescript)
+            export TYPESCRIPT=1
             shift
             ;;
 
@@ -149,6 +154,7 @@ command="$command -e NODEJS_DEFAULT_VERSION=$NODEJS_DEFAULT_VERSION"
 command="$command -e NEOVIM_PLUGIN_PHPCD=$NEOVIM_PLUGIN_PHPCD"
 command="$command -e NEOVIM_PLUGIN_TERN=$NEOVIM_PLUGIN_TERN"
 command="$command -e NEOVIM_PLUGIN_PRETTIER=$NEOVIM_PLUGIN_PRETTIER"
+command="$command -e TYPESCRIPT=$TYPESCRIPT"
 command="$command -e TMUX=$TMUX"
 command="$command -e LAUNCHER=$LAUNCHER"
 #command="$command -v '/etc/passwd:/etc/passwd:ro'"
