@@ -189,6 +189,7 @@ command="$command -v '$currentDirectory/config/neovim/plugged:/home/$USER/.confi
 command="$command -v '$currentDirectory/config/neovim/themes:/home/$USER/.config/nvim/themes:ro'"
 command="$command -v '$currentDirectory/config/neovim/init:/home/$USER/.config/nvim/init:ro'"
 command="$command -v '$currentDirectory/config/neovim/init.vim:/home/$USER/.config/nvim/init.vim:ro'"
+command="$command -v '$currentDirectory/config/neovim/ftplugin:/home/$USER/.config/nvim/ftplugin:ro'"
 command="$command -v '$currentDirectory/config/neovim/rplugin.vim:/home/$USER/.local/share/nvim/rplugin.vim:rw'"
 command="$command -v '$currentDirectory/config/neovim/snippets:/home/$USER/.snippets:rw'"
 command="$command -v '$currentDirectory/config/neovim/snippets:/home/$USER/.vim/UltiSnips:rw'"

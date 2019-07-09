@@ -34,9 +34,9 @@ imap <F8> <Esc><F8>
 vmap <F8> <Esc><F8>
 
 " Ctrl+f : [PLUGIN] CtrlSF
-map <C-f> <Esc> :CtrlSF
-imap <C-f> <Esc> :CtrlSF
-vmap <C-f> <Esc> :CtrlSF
+map <C-f> <Esc> :CtrlSF 
+imap <C-f> <Esc> :CtrlSF 
+vmap <C-f> <Esc> :CtrlSF 
 
 " Ctrl+o : [PLUGIN] CtrlP
 map <C-o> <Esc> :CtrlP .<cr>
