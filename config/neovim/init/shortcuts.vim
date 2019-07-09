@@ -113,4 +113,4 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " Autocomplete
 inoremap <expr> <C-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
             \ '<C-x><C-o><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
-
+map <C-Space> :echo tsuquyomi#hint()<CR>
