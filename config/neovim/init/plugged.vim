@@ -29,9 +29,6 @@ Plug 'prettier/vim-prettier', {'do' : 'npm install', 'for' : ['javascript', 'typ
 Plug 'dyng/ctrlsf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
-" NPM
-Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
-
 " Auto complete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
