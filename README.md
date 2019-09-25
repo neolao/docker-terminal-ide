@@ -49,3 +49,11 @@ The prefix is `Ctrl`+`p`.
 | Key | Description         |
 | --- | ------------------- |
 | `h` | Open the help panel |
+
+Softwares
+---------
+
+| Name  | Version  |
+| ----- | -------- |
+| `git` | `2.23.0` |
+
