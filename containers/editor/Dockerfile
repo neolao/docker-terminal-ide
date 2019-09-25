@@ -1,20 +1,24 @@
-FROM debian:stretch-slim
+FROM debian:bullseye-slim
 maintainer neolao <contact@neolao.com>
 
-# General packages
-run apt-get update && apt-get install -y sudo
+RUN apt-get update && \
+    apt-get install -y \
+    # General packages
+    sudo zsh htop git unzip wget curl automake cmake autoconf pkg-config libncurses5-dev \
+    # Packages for editorconfig
+    libpcre3-dev editorconfig \
+    # Packages for neovim
+    libtool-bin g++ python3 python3-pip gettext \
+    # Packages for tmux
+    libevent-dev bison byacc \
+    # Packages for twin
+    gcc libx11-dev libxpm-dev libncurses-dev zlib1g-dev libgpm-dev \
+    # Packages for GRV
+    golang libcurl3-dev libreadline-dev libncursesw5-dev \
+    # Vim plugin: YouCompleteMe
+    build-essential python3-dev
 
-# Packages for editorconfig
-run apt-get update && apt-get install -y automake cmake libpcre3-dev git
 
-# Packages for neovim
-RUN apt-get update && apt-get install -y libtool-bin autoconf automake cmake libncurses5-dev g++ pkg-config unzip git curl python3
-
-# Packages for tmux
-RUN apt-get update && apt-get install -y libevent-dev libncurses5-dev cmake automake pkg-config git
-
-# Packages for zsh
-RUN apt-get update && apt-get install -y zsh
 
 # Build tmux
 RUN git clone https://github.com/tmux/tmux.git tmux
@@ -22,15 +26,7 @@ RUN cd tmux && ./autogen.sh
 RUN cd tmux && ./configure
 RUN cd tmux && make
 
-# Build editorconfig core
-RUN apt-get install -y editorconfig
-#RUN apt-get install -y cmake libpcre3-dev
-#RUN git clone https://github.com/editorconfig/editorconfig-core-c.git
-#RUN cd editorconfig-core-c && cmake . && make install && rm /usr/local/bin/editorconfig && ln -s /editorconfig-core-c/bin/editorconfig /usr/local/bin/editorconfig
-#RUN cd ../
-
 # Build neovim
-RUN apt-get update && apt-get install -y gettext python3-pip
 RUN git clone https://github.com/neovim/neovim.git nvim
 RUN cd nvim && make CMAKE_BUILD_TYPE=RelWithDebInfo && make install
 RUN cd ../ && rm -rf nvim
@@ -50,9 +46,6 @@ ENV LC_ALL en_US.UTF-8
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 RUN dpkg-reconfigure --frontend=noninteractive locales
 
-# Packages for twin
-RUN apt-get update && apt-get install -y gcc cmake libx11-dev libxpm-dev libncurses-dev zlib1g-dev libgpm-dev
-
 # Build twin
 RUN git clone https://github.com/cosmos72/twin.git
 RUN cd twin && ./configure
@@ -64,9 +57,6 @@ RUN cd twin && make && make install
 # Build libgit2
 #RUN git clone https://github.com/libgit2/libgit2.git
 #RUN cd libgit2 && mkdir build && cd build && cmake .. && cmake --build .
-
-# Packages for GRV
-RUN apt-get update && apt-get install -y golang cmake libcurl3-dev libreadline-dev libncursesw5-dev wget
 
 # Build GRV
 RUN mkdir /go
@@ -83,19 +73,12 @@ RUN ln -s /fzf/bin/fzf /fzf/bin/fzy
 RUN curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.8.1/ripgrep_0.8.1_amd64.deb
 RUN dpkg -i ripgrep_0.8.1_amd64.deb
 
-# Install HTOP
-RUN apt-get update && apt-get install -y htop
-
 # Install Git LFS
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 RUN apt-get install -y git-lfs
 
 # Install Terminal Markdown Viewer
-RUN apt-get install -y python3-pip
 RUN pip3 install mdv
-
-# Vim plugin: YouCompleteMe
-RUN apt-get install -y build-essential cmake python3-dev
 
 # Volume
 RUN mkdir /workspace
