@@ -25,4 +25,9 @@ endfunction
 "autocmd TabEnter * execute ResumeTagBar()
 "autocmd TabEnter * wincmd p
 
-
+let g:tagbar_type_typescript = {
+  \ 'kinds': [
+    \ 'c:class:0:1',
+  \ ],
+  \ 'sort' : 0
+\ }

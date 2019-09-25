@@ -25,7 +25,6 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/denite.nvim'
 Plug 'majutsushi/tagbar'
 Plug 'vimlab/split-term.vim'
-Plug 'sheerun/vim-polyglot'
 Plug 'niftylettuce/vim-jinja'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'prettier/vim-prettier', {'do' : 'npm install', 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue']}
@@ -44,6 +43,9 @@ Plug 'w0rp/ale'
 
 " To display and auto remove whitespace
 Plug 'ntpeters/vim-better-whitespace'
+
+" Syntax
+Plug 'sheerun/vim-polyglot'
 
 " Typescript
 Plug 'leafgarland/typescript-vim'
