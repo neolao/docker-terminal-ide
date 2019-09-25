@@ -11,12 +11,14 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'powerline/powerline'
 Plug '~/.config/nvim/themes'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " File explorer
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'neolao/vim-nerdtree-tabs'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'tpope/vim-sensible'
-Plug 'neolao/vim-nerdtree-tabs'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'isRuslan/vim-es6'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
