@@ -53,7 +53,8 @@ The prefix is `Ctrl`+`p`.
 Softwares
 ---------
 
-| Name  | Version  |
-| ----- | -------- |
-| `git` | `2.23.0` |
+| Name   | Version  |
+| ------ | -------- |
+| `nvim` | `0.5.0`  |
+| `git`  | `2.23.0` |
 
