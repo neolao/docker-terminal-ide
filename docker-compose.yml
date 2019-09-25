@@ -28,6 +28,29 @@ services:
             - ./bin/composer.phar:/usr/local/bin/composer:rw
             - ${WORKSPACE}:/workspace:rw
 
+    editor_php:
+        image: 'neolao/ide:php'
+        volumes:
+            - ${HOME}/.ssh:/home/${USER}/.ssh:rw
+            - ${HOME}/.gitconfig:/home/${USER}/.gitconfig:ro
+            - ./setups:/setups:ro
+            - ./launchers:/launchers:ro
+            - ./config/etc/hostname:/etc/hostname:ro
+            - ./config/zsh/zshrc:/home/${USER}/.zshrc:ro
+            - ./config/zsh/oh-my-zsh:/home/${USER}/.oh-my-zsh:rw
+            - ./config/zsh/oh-my-zsh-custom:/home/${USER}/.oh-my-zsh-custom:rw
+            - ./config/tmux/tmux.conf:/home/${USER}/.tmux.conf:ro
+            - ./config/neovim/plug.vim:/home/${USER}/plug.vim:ro
+            - ./config/neovim/plugged:/home/${USER}/.config/nvim/plugged:rw
+            - ./config/neovim/themes:/home/${USER}/.config/nvim/themes:ro
+            - ./config/neovim/init:/home/${USER}/.config/nvim/init:ro
+            - ./config/neovim/init.vim:/home/${USER}/.config/nvim/init.vim:ro
+            - ./config/neovim/rplugin.vim:/home/${USER}/.local/share/nvim/rplugin.vim:ro
+            - ./config/home/.nvm:/home/${USER}/.nvm:rw
+            - ./applications:/applications:rw
+            - ./bin/composer.phar:/usr/local/bin/composer:rw
+            - ${WORKSPACE}:/workspace:rw
+
     smartgit:
         image: 'neolao/ide:broadway_smartgit'
         volumes:

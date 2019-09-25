@@ -2,5 +2,11 @@ FROM neolao/ide
 maintainer neolao <contact@neolao.com>
 
 # Install PHP
-RUN apt-get update && apt-get install -y php7.0-cli php7.0-mbstring php7.0-xml php7.0-msgpack
+RUN sudo apt install ca-certificates apt-transport-https
+RUN wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add -
+RUN echo "deb https://packages.sury.org/php/ stretch main" | sudo tee /etc/apt/sources.list.d/php.list
+RUN apt-get update && apt-get install -y php7.3-cli php7.3-mbstring php7.3-xml php7.3-msgpack
 
+# Install PHPUnit
+RUN wget -O /usr/bin/phpunit https://phar.phpunit.de/phpunit-8.phar
+RUN chmod +x /usr/bin/phpunit

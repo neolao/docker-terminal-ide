@@ -34,6 +34,7 @@ fi
 
 
 # Options
+preset="default"
 target="."
 while test $# -gt 0; do
     case "$1" in
@@ -91,6 +92,12 @@ while test $# -gt 0; do
             shift
             ;;
 
+        --preset=*)
+            option=$1
+            preset=${option:9}
+            shift
+            ;;
+
         *)
             target="$1"
             shift
@@ -112,14 +119,8 @@ then
     export FILE_TO_OPEN=${FILE_TO_OPEN:$directoryLength}
 fi
 
-# Select the preset
-preset="default"
-if [ -n "$2" ]
-then
-    preset=$2
-fi
-
-# Configuration
+# Preset
+echo "Selected preset: $preset"
 case $preset in
     default)
         service="editor"

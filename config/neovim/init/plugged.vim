@@ -15,7 +15,7 @@ Plug '~/.config/nvim/themes'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 Plug 'tpope/vim-sensible'
-Plug 'jistr/vim-nerdtree-tabs'
+Plug 'neolao/vim-nerdtree-tabs'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'isRuslan/vim-es6'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
