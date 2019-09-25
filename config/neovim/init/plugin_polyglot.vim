@@ -1,1 +1,2 @@
-"let g:polyglot_disabled = ['typescript']
+let g:polyglot_disabled = ['typescript']
+

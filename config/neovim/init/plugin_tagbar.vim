@@ -1,5 +1,5 @@
 " Afficher / Cacher TagBar
-let g:tagbaropened=1
+let g:tagbaropened=0
 function! ToggleTagBar()
     execute(":TagbarToggle")
     if g:tagbaropened != 0
@@ -26,8 +26,20 @@ endfunction
 "autocmd TabEnter * wincmd p
 
 let g:tagbar_type_typescript = {
+  \ 'ctagsbin' : 'tstags',
+  \ 'ctagsargs' : '-f-',
   \ 'kinds': [
-    \ 'c:class:0:1',
+    \ 'f:function:0:1',
+    \ 'M:Module:0:1',
+    \ 'I:import:1:1',
+    \ 'e:enums:0:1',
+    \ 't:typealias:0:1',
+    \ 'i:interface:0:1',
+    \ 'c:const:0:1',
+    \ 'C:class:0:1',
+    \ 'm:method:0:1',
+    \ 'p:property:0:1',
+    \ 'v:variable:0:1',
   \ ],
   \ 'sort' : 0
 \ }
