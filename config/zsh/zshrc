@@ -71,7 +71,7 @@ LC_ALL=en_US.UTF-8
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ant colorize cp history history-substring-search node themes vim-interaction autojump)
+plugins=(git ant colorize cp history history-substring-search node themes vim-interaction)
 
 source $ZSH/oh-my-zsh.sh
 
