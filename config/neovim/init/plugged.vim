@@ -10,6 +10,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'powerline/powerline'
 Plug '~/.config/nvim/themes'
+Plug 'ryanoasis/vim-devicons'
 
 " File explorer
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
