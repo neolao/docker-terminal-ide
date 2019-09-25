@@ -35,6 +35,3 @@ let NERDTreeShowHidden=1
 " Taille de l'explorateur
 let NERDTreeWinSize=30
 
-" Icones
-let g:webdevicons_enable_nerdtree=1
-
