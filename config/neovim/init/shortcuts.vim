@@ -26,10 +26,10 @@ imap <C-g> <Esc> :NERDTreeFind<cr>
 vmap <C-g> <Esc> :NERDTreeFind<cr>
 
 " F8 : [PLUGIN] TagBar
-map <silent> <F8> :execute ToggleTagBar()<cr>
-map <C-l> :execute ToggleTagBar()<cr>
-imap <C-l> <Esc> :execute ToggleTagBar()<cr>i
-vmap <C-l> <Esc> :execute ToggleTagBar()<cr>
+map <silent> <F8> :TagbarToggle<cr>
+map <C-l> :TagbarToggle<cr>
+imap <C-l> <Esc> :TagbarToggle<cr>i
+vmap <C-l> <Esc> :TagbarToggle<cr>
 imap <F8> <Esc><F8>
 vmap <F8> <Esc><F8>
 
@@ -42,6 +42,11 @@ vmap <C-f> <Esc> :CtrlSF
 map <C-o> <Esc> :CtrlP .<cr>
 imap <C-o> <Esc> :CtrlP .<cr>
 vmap <C-o> <Esc> :CtrlP .<cr>
+
+" Ctrl+i : [PLUGIN] Tsuquyomi
+map <C-i> <Esc> :TsuImport<cr>
+imap <C-i> <Esc> :TsuImport<cr>i
+vmap <C-i> <Esc> :TsuImport<cr>
 
 " Supprimer une ligne
 map <silent> <C-d> :delete<cr>

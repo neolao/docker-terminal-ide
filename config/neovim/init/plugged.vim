@@ -17,6 +17,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'neolao/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'pseewald/nerdtree-tagbar-combined'
 
 Plug 'tpope/vim-sensible'
 Plug 'editorconfig/editorconfig-vim'

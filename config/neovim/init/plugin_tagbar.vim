@@ -1,3 +1,8 @@
+let g:tagbar_left = 0
+let g:tagbar_vertical = 0
+"autocmd VimEnter * nested :TagbarOpen
+"autocmd VimEnter * nested :ToggleNERDTreeAndTagbar
+
 " Afficher / Cacher TagBar
 let g:tagbaropened=0
 function! ToggleTagBar()
@@ -32,14 +37,14 @@ let g:tagbar_type_typescript = {
     \ 'f:function:0:1',
     \ 'M:Module:0:1',
     \ 'I:import:1:1',
-    \ 'e:enums:0:1',
-    \ 't:typealias:0:1',
+    \ 'e:enums:1:1',
+    \ 't:typealias:1:1',
     \ 'i:interface:0:1',
-    \ 'c:const:0:1',
+    \ 'c:const:1:1',
     \ 'C:class:0:1',
-    \ 'm:method:0:1',
     \ 'p:property:0:1',
-    \ 'v:variable:0:1',
+    \ 'm:method:0:1',
+    \ 'v:variable:1:1',
   \ ],
   \ 'sort' : 0
 \ }

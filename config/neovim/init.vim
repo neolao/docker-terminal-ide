@@ -17,5 +17,6 @@ source ~/.config/nvim/init/plugin_neosnippet.vim
 source ~/.config/nvim/init/plugin_tsuquyomi.vim
 source ~/.config/nvim/init/plugin_devicons.vim
 source ~/.config/nvim/init/plugin_polyglot.vim
+source ~/.config/nvim/init/plugin_airline.vim
 source ~/.config/nvim/init/shortcuts.vim
 
