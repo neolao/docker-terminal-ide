@@ -43,10 +43,9 @@ map <C-o> <Esc> :CtrlP .<cr>
 imap <C-o> <Esc> :CtrlP .<cr>
 vmap <C-o> <Esc> :CtrlP .<cr>
 
-" Ctrl+i : [PLUGIN] Tsuquyomi
-map <C-i> <Esc> :TsuImport<cr>
-imap <C-i> <Esc> :TsuImport<cr>i
-vmap <C-i> <Esc> :TsuImport<cr>
+" Ctrl+m : [PLUGIN] Tsuquyomi
+"map <C-m> :TsuImport<cr>
+"imap <C-m> <Esc> :TsuImport<cr>i
 
 " Supprimer une ligne
 map <silent> <C-d> :delete<cr>

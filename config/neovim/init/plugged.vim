@@ -47,6 +47,7 @@ Plug 'ntpeters/vim-better-whitespace'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
+Plug 'vim-syntastic/syntastic'
 
 " Typescript
 Plug 'leafgarland/typescript-vim'
@@ -58,7 +59,6 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Dockerfile
 Plug 'ekalinin/Dockerfile.vim'
 
-Plug 'vim-syntastic/syntastic'
 
 if $NEOVIM_PLUGIN_TERN
     Plug 'ternjs/tern_for_vim'
