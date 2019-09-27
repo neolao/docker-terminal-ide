@@ -2,8 +2,7 @@
 /applications/smartgit/**/log.txt
 /applications/smartgit/config/17.1
 /config/home/.nvm
-/config/zsh/oh-my-zsh/cache
-/config/zsh/oh-my-zsh/log
+/config/zsh/oh-my-zsh
 /config/neovim/plugged
 /var
 !/var/.keep
