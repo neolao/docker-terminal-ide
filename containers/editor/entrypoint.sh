@@ -22,8 +22,8 @@ chsh -s /bin/zsh $USER_NAME
 # Launch
 if [ -n "$LAUNCHER" ]
 then
-    su $USER_NAME --preserve-environment -c "$LAUNCHER"
+    su $USER_NAME --preserve-environment --session-command "$LAUNCHER"
 else
-    su $USER_NAME --preserve-environment -c "zsh"
+    su $USER_NAME --preserve-environment --session-command "zsh"
 fi
 

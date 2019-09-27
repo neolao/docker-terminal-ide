@@ -123,11 +123,11 @@ fi
 echo "Selected preset: $preset"
 case $preset in
     default)
-        service="editor"
+        image="neolao/ide"
         ;;
 
     php)
-        service="editor_php"
+        image="neolao/ide:php"
         export NEOVIM_PLUGIN_PHPCD=1
         ;;
 
@@ -146,7 +146,7 @@ touch $currentDirectory/var/gitconfig.user
 touch $currentDirectory/var/gitconfig.aliases
 touch $currentDirectory/var/.NERDTreeBookmarks
 
-command="docker-compose run --rm"
+command="docker run --interactive --tty --rm"
 command="$command -e USER_NAME=$USER_NAME"
 command="$command -e USER_UID=$USER_UID"
 command="$command -e USER_GID=$USER_GID"
@@ -205,7 +205,8 @@ command="$command -v '$currentDirectory/var/.cache:/home/$USER/.cache:rw'"
 command="$command -v '$currentDirectory/var/.NERDTreeBookmarks:/home/$USER/.NERDTreeBookmarks:rw'"
 command="$command -v '/:/disk:ro'"
 command="$command -v '$WORKSPACE:/workspace:rw'"
-command="$command $service"
+#command="$command $service"
+command="$command $image"
 
 echo -e "\033[41;37m      START IDE      \033[0m"
 eval $command

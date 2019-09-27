@@ -7,8 +7,8 @@ TERM=xterm-256color
 export HOME
 export TERM
 
-lines=$(tput lines)
-cols=$(tput cols)
+#lines=$(tput lines)
+#cols=$(tput cols)
 #stty rows $lines
 #stty cols $cols
 
@@ -16,6 +16,7 @@ cols=$(tput cols)
 
 echo "Starting TMUX ..."
 sleep 1
+
 options="-2 -S /tmp/tmux.pid -f $HOME/.tmux.conf"
 /tmux/tmux $options new-session -d -s $SESSION
 if [ "$FILE_TO_OPEN" == "" ]
