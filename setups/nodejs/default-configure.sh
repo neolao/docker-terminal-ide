@@ -15,8 +15,14 @@ fi
     sudo mkdir /Users
     sudo chmod 777 /Users
 
+    # Install NVM
+    if [ ! -f "~/.nvm/nvm.sh" ]; then
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+    fi
     . ~/.nvm/nvm.sh
     export NVM_DIR=$(realpath ~/.nvm)
+
+    # Install NodeJS
     nvm install $NODEJS_DEFAULT_VERSION
     node_path=$(which node)
     npm_path=$(which npm)
