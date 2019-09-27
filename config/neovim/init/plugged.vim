@@ -59,6 +59,11 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Dockerfile
 Plug 'ekalinin/Dockerfile.vim'
 
+" Interface
+Plug 'neolao/vim-eighties'
+
+" Markdown table
+Plug 'dhruvasagar/vim-table-mode'
 
 if $NEOVIM_PLUGIN_TERN
     Plug 'ternjs/tern_for_vim'
@@ -69,5 +74,3 @@ if $NEOVIM_PLUGIN_PHPCD
 endif
 
 call plug#end()
-
-

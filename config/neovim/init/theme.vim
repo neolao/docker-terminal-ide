@@ -9,10 +9,6 @@ set cursorline
 set cursorcolumn
 " set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
-" Airline theme
-let g:airline_theme='molokai'
-let g:airline_powerline_fonts = 1
-
 " Powerline
 "set rtp+=/user/.config/nvim/plugged/powerline/bindings/vim/
 "set laststatus=2
