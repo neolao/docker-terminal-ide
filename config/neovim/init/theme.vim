@@ -8,6 +8,7 @@ colorscheme molokai
 set cursorline
 set cursorcolumn
 " set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+hi Normal guibg=NONE ctermbg=NONE
 
 " Powerline
 "set rtp+=/user/.config/nvim/plugged/powerline/bindings/vim/
