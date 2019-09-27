@@ -32,6 +32,9 @@ Plug 'prettier/vim-prettier', {'do' : 'npm install', 'for' : ['javascript', 'typ
 Plug 'dyng/ctrlsf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
+" Git
+Plug 'lambdalisue/gina.vim'
+
 " Auto complete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
