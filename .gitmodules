@@ -1,3 +1,0 @@
-[submodule "applications/gitlist"]
-	path = applications/gitlist
-	url = https://github.com/klaussilveira/gitlist.git

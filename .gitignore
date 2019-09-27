@@ -1,4 +1,5 @@
 .DS_Store
+/applications/gitlist
 /applications/smartgit/**/log.txt
 /applications/smartgit/config/17.1
 /config/home/.nvm

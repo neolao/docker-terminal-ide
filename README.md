@@ -9,12 +9,6 @@ Clone the project including submodules:
 git clone --recursive https://github.com/neolao/docker-terminal-ide.git
 ```
 
-Load submodules if the project is already cloned:
-
-```bash
-git submodule update --init --recursive
-```
-
 Build the Docker container:
 
 ```bash
