@@ -15,6 +15,13 @@ Load submodules if the project is already cloned:
 git submodule update --init --recursive
 ```
 
+Build the Docker container:
+
+```bash
+cd containers/editor
+./build.sh
+```
+
 Add the start script to `/usr/local/bin`:
 
 ```bash
@@ -37,18 +44,13 @@ Examples:
 
 Options:
     --nodejs=N    Install NodeJS version N
-    --smartgit    Launch SmartGit
     --tmux        Use TMUX
 ```
 
-TMUX
+HELP
 ----
 
-The prefix is `Ctrl`+`p`.
-
-| Key | Description         |
-| --- | ------------------- |
-| `h` | Open the help panel |
+[See the help page](config/home/help.md)
 
 Softwares
 ---------

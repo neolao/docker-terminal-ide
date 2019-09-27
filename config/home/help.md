@@ -4,6 +4,8 @@ HELP
 TMUX
 ----
 
-| Key | Description         |
-|:---:| ------------------- |
-| h   | Open the help panel |
+The prefix is `Ctrl`+`p`.
+
+| Key   | Description         |
+| ----- | ------------------- |
+| h     | Open the help panel |
