@@ -1,8 +1,7 @@
 .DS_Store
 /applications/smartgit/**/log.txt
 /applications/smartgit/config/17.1
-/config/home/.nvm/versions
-/config/home/.nvm/test
+/config/home/.nvm
 /config/zsh/oh-my-zsh/cache
 /config/zsh/oh-my-zsh/log
 /config/neovim/plugged
