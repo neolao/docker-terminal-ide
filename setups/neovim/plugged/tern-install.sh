@@ -15,12 +15,16 @@ fi
     then
         echo "NPM not available"
     else
-        cd ~/.config/nvim/plugged/tern_for_vim
-        if [ ! -d "./node_modules" ]
-        then
-            npm install
+        if [ -d "~/.config/nvim/plugged/tern_for_vim" ]; then
+            cd ~/.config/nvim/plugged/tern_for_vim
+            if [ ! -d "./node_modules" ]
+            then
+                npm install
+            fi
+            echo "OK"
+        else
+            echo "Plugin not installed"
         fi
-        echo "OK"
     fi
 
 ) 2>&1 | trace_output

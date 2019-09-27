@@ -1,5 +1,7 @@
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+if exists("*SyntasticStatuslineFlag")
+    set statusline+=%{SyntasticStatuslineFlag()}
+endif
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1

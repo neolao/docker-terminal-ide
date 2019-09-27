@@ -2,6 +2,9 @@
 if filereadable(expand("~/plug.vim"))
     source ~/plug.vim
 endif
+"let g:plug_window = 'enew'
+"let g:plug_window = 'botright split'
+
 call plug#begin('~/.config/nvim/plugged')
 
 " UI
@@ -77,3 +80,8 @@ if $NEOVIM_PLUGIN_PHPCD
 endif
 
 call plug#end()
+
+" Auto install
+if !filereadable(expand("~/.config/nvim/plugged/ctrlp.vim/readme.md"))
+    autocmd VimEnter * :PlugInstall --sync
+endif
