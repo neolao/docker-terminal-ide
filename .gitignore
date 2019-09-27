@@ -3,6 +3,7 @@
 /applications/smartgit/config/17.1
 /config/home/.nvm
 /config/zsh/oh-my-zsh
+/config/zsh/oh-my-zsh-custom/themes
 /config/neovim/plugged
 /var
 !/var/.keep
