@@ -16,7 +16,7 @@ fi
     sudo chmod 777 /Users
 
     # Install NVM
-    if [ ! -f "~/.nvm/nvm.sh" ]; then
+    if [ ! -f ~/.nvm/nvm.sh ]; then
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
     fi
     . ~/.nvm/nvm.sh
