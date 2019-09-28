@@ -27,6 +27,11 @@ then
             install_needed=1
         else
             nvm use $NODEJS_DEFAULT_VERSION > /dev/null 2>&1
+            node_path=$(which node)
+            npm_path=$(which npm)
+            sudo ln -s $node_path /usr/local/bin/node
+            sudo ln -s $npm_path /usr/local/bin/npm
+
             version=$(nvm current)
 
             if [ ! -f ~/.nvm/versions/node/$version/bin/yarn ]; then
