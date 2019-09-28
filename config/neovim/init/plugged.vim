@@ -72,7 +72,7 @@ Plug 'neolao/vim-eighties'
 Plug 'dhruvasagar/vim-table-mode'
 
 if $NEOVIM_PLUGIN_TERN
-    Plug 'ternjs/tern_for_vim'
+    Plug 'ternjs/tern_for_vim', {'do' : 'npm install'}
 endif
 
 if $NEOVIM_PLUGIN_PHPCD
