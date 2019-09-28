@@ -3,17 +3,10 @@ Terminal IDE with Docker
 
 Installation
 ------------
-Clone the project including submodules:
+Clone the project:
 
 ```bash
-git clone --recursive https://github.com/neolao/docker-terminal-ide.git
-```
-
-Build the Docker container:
-
-```bash
-cd containers/editor
-./build.sh
+git clone https://github.com/neolao/docker-terminal-ide.git
 ```
 
 Add the start script to `/usr/local/bin`:
