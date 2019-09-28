@@ -1,6 +1,8 @@
 Terminal IDE with Docker
 ========================
 
+![Screenshot](./screenshot.png)
+
 Installation
 ------------
 Clone the project:
