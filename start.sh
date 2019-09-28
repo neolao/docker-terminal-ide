@@ -28,9 +28,9 @@ export MULTIPLE=1
 
 # MacOS
 platform=$(uname)
-if [[ $platform == 'Darwin' ]]; then
-  echo "MacOS detected"
-fi
+#if [[ $platform == 'Darwin' ]]; then
+#  echo "MacOS detected"
+#fi
 
 
 # Options
@@ -53,7 +53,6 @@ while test $# -gt 0; do
             echo ""
             echo "Options:"
             echo "    --nodejs=N    Install NodeJS version N"
-            echo "    --smartgit    Launch SmartGit"
             echo "    --tmux        Use TMUX"
             exit 0
             ;;
@@ -136,12 +135,6 @@ case $preset in
         exit 1
 esac
 
-# Run services
-cd $currentDirectory
-if [ "$SERVICE_SMARTGIT" -eq 1 ]; then
-    docker-compose up -d smartgit
-fi
-
 touch $currentDirectory/var/gitconfig.user
 touch $currentDirectory/var/gitconfig.aliases
 touch $currentDirectory/var/.NERDTreeBookmarks
@@ -205,14 +198,9 @@ command="$command -v '$currentDirectory/var/.cache:/home/$USER/.cache:rw'"
 command="$command -v '$currentDirectory/var/.NERDTreeBookmarks:/home/$USER/.NERDTreeBookmarks:rw'"
 command="$command -v '/:/disk:ro'"
 command="$command -v '$WORKSPACE:/workspace:rw'"
-#command="$command $service"
 command="$command $image"
 
 echo -e "\033[41;37m      START IDE      \033[0m"
 eval $command
 
-if [ "$MULTIPLE" -eq 0 ]
-then
-    docker-compose down
-fi
 
