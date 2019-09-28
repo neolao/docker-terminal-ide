@@ -16,6 +16,8 @@ sudo printf '%s\n%s\n' '#!/bin/bash' "$(pwd)/start.sh \$@" > /usr/local/bin/ide
 chmod +x /usr/local/bin/ide
 ```
 
+Install a Nerd Font: [nerdfonts.com](https://www.nerdfonts.com/)
+
 Start options
 -------------
 

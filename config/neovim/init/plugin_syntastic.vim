@@ -10,4 +10,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_php_checkers = ['php']
-let g:syntastic_json_checkers = ['jsonlint']
+if $NODEJS_DEFAULT_VERSION
+    let g:syntastic_json_checkers = ['jsonlint']
+endif
+
+

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+if [ "$NODEJS_DEFAULT_VERSION" -eq 0 ]; then
+    exit 0
+fi
 if [ ! -f ~/.nvm/nvm.sh ]; then
     exit 0
 fi
