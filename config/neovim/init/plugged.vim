@@ -31,7 +31,6 @@ Plug 'majutsushi/tagbar'
 Plug 'vimlab/split-term.vim'
 Plug 'niftylettuce/vim-jinja'
 Plug 'cloudhead/neovim-fuzzy'
-Plug 'prettier/vim-prettier', {'do' : 'npm install', 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue']}
 Plug 'dyng/ctrlsf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
@@ -54,10 +53,15 @@ Plug 'ntpeters/vim-better-whitespace'
 " Syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-syntastic/syntastic'
+if $NODEJS_DEFAULT_VERSION
+    Plug 'prettier/vim-prettier', {'do' : 'npm install', 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue']}
+endif
 
 " Typescript
-Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi', {'do' : 'npm install -g typescript'}
+if ($NODEJS_DEFAULT_VERSION && $TYPESCRIPT)
+    Plug 'leafgarland/typescript-vim'
+    Plug 'Quramy/tsuquyomi', {'do' : 'npm install -g typescript'}
+endif
 
 " styled components
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
