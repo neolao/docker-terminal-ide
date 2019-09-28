@@ -140,6 +140,7 @@ touch $currentDirectory/var/gitconfig.aliases
 touch $currentDirectory/var/.NERDTreeBookmarks
 
 command="docker run --interactive --tty --rm"
+command="$command --name ide"
 command="$command -e USER_NAME=$USER_NAME"
 command="$command -e USER_UID=$USER_UID"
 command="$command -e USER_GID=$USER_GID"
