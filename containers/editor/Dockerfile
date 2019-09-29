@@ -61,7 +61,7 @@ RUN cd twin && make && make install
 # Build GRV
 RUN mkdir /go
 ENV GOPATH /go
-RUN wget -O grv https://github.com/rgburke/grv/releases/download/v0.1.3/grv_v0.1.3_linux64
+RUN wget -O grv https://github.com/rgburke/grv/releases/download/v0.3.2/grv_v0.3.2_linux64
 RUN chmod +x /grv
 RUN mv /grv /usr/local/bin/grv
 

@@ -1,2 +1,6 @@
 set mouse true
+set commit-graph true
+theme --name classic --component All.ActiveViewSelectedRow --bgcolor Black --fgcolor Green
+theme --name classic --component CommitView.Date --bgcolor None --fgcolor Cyan
+theme --name classic --component DiffView.StatsFile --bgcolor None --fgcolor Cyan
 set theme classic
