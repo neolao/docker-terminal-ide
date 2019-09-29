@@ -139,8 +139,16 @@ touch $currentDirectory/var/gitconfig.user
 touch $currentDirectory/var/gitconfig.aliases
 touch $currentDirectory/var/.NERDTreeBookmarks
 
+instanceCount=$(expr $(docker ps -f name=ide | wc -l) - 1)
+if [ $MULTIPLE -eq 0 -a $instanceCount -gt 0 ]; then
+    echo "No multiple instance"
+    exit 1
+fi
+#instanceSuffix=$(expr $instanceCount + 1)
+instanceSuffix=$(date +%s)
+
 command="docker run --interactive --tty --rm"
-command="$command --name ide"
+command="$command --name ide-$instanceSuffix"
 command="$command -e USER_NAME=$USER_NAME"
 command="$command -e USER_UID=$USER_UID"
 command="$command -e USER_GID=$USER_GID"
@@ -173,6 +181,8 @@ command="$command -v '$currentDirectory/launchers:/launchers:ro'"
 command="$command -v '$currentDirectory/config/git/gitconfig:/home/$USER/.gitconfig:ro'"
 command="$command -v '$currentDirectory/config/git/config:/git/config:ro'"
 command="$command -v '$currentDirectory/config/git/commands:/git/commands:ro'"
+command="$command -v '$currentDirectory/config/git/tools/diff-so-fancy:/usr/local/bin/diff-so-fancy:ro'"
+command="$command -v '$currentDirectory/config/git/grv:/home/$USER/.config/grv:ro'"
 command="$command -v '$currentDirectory/config/etc/hostname:/etc/hostname:ro'"
 command="$command -v '$currentDirectory/config/zsh/zshrc:/home/$USER/.zshrc:ro'"
 command="$command -v '$currentDirectory/config/zsh/oh-my-zsh:/home/$USER/.oh-my-zsh-mounted:rw'"
