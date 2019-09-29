@@ -8,10 +8,10 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " UI
+Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'powerline/powerline'
 Plug '~/.config/nvim/themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -22,14 +22,11 @@ Plug 'neolao/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'pseewald/nerdtree-tagbar-combined'
 
-Plug 'tpope/vim-sensible'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'isRuslan/vim-es6'
+" Tools
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/denite.nvim'
 Plug 'majutsushi/tagbar'
 Plug 'vimlab/split-term.vim'
-Plug 'niftylettuce/vim-jinja'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'dyng/ctrlsf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -44,18 +41,38 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
-" Linter
-Plug 'w0rp/ale'
-
 " To display and auto remove whitespace
 Plug 'ntpeters/vim-better-whitespace'
 
+" Interface
+Plug 'neolao/vim-eighties'
+Plug 'nathanaelkane/vim-indent-guides'
+
+" Linter
+Plug 'w0rp/ale'
+
 " Syntax
+Plug 'editorconfig/editorconfig-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-syntastic/syntastic'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'niftylettuce/vim-jinja'
 if $NODEJS_DEFAULT_VERSION
     Plug 'prettier/vim-prettier', {'do' : 'npm install', 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue']}
 endif
+
+" styled components
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+" Markdown table
+Plug 'dhruvasagar/vim-table-mode'
+
+" Javascript
+Plug 'isRuslan/vim-es6'
+if $NEOVIM_PLUGIN_TERN
+    Plug 'ternjs/tern_for_vim', {'do' : 'npm install'}
+endif
+
 
 " Typescript
 if ($NODEJS_DEFAULT_VERSION && $TYPESCRIPT)
@@ -63,22 +80,7 @@ if ($NODEJS_DEFAULT_VERSION && $TYPESCRIPT)
     Plug 'Quramy/tsuquyomi', {'do' : 'npm install -g typescript'}
 endif
 
-" styled components
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-
-" Dockerfile
-Plug 'ekalinin/Dockerfile.vim'
-
-" Interface
-Plug 'neolao/vim-eighties'
-
-" Markdown table
-Plug 'dhruvasagar/vim-table-mode'
-
-if $NEOVIM_PLUGIN_TERN
-    Plug 'ternjs/tern_for_vim', {'do' : 'npm install'}
-endif
-
+" PHP
 if $NEOVIM_PLUGIN_PHPCD
     Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 endif
