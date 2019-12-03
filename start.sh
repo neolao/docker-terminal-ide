@@ -138,6 +138,7 @@ esac
 touch $currentDirectory/var/gitconfig.user
 touch $currentDirectory/var/gitconfig.aliases
 touch $currentDirectory/var/.NERDTreeBookmarks
+mkdir -p $currentDirectory/var/go
 
 instanceCount=$(expr $(docker ps -f name=ide | wc -l) - 1)
 if [ $MULTIPLE -eq 0 -a $instanceCount -gt 0 ]; then
@@ -198,6 +199,9 @@ command="$command -v '$currentDirectory/config/neovim/ftplugin:/home/$USER/.conf
 command="$command -v '$currentDirectory/config/neovim/rplugin.vim:/home/$USER/.local/share/nvim/rplugin.vim:rw'"
 command="$command -v '$currentDirectory/config/neovim/snippets:/home/$USER/.snippets:rw'"
 command="$command -v '$currentDirectory/config/neovim/snippets:/home/$USER/.vim/UltiSnips:rw'"
+command="$command -v '$currentDirectory/var/.vim-backup:/home/$USER/.vim-backup:rw'"
+command="$command -v '$currentDirectory/var/.vim-swap:/home/$USER/.vim-swap:rw'"
+command="$command -v '$currentDirectory/var/.vim-undo:/home/$USER/.vim-undo:rw'"
 command="$command -v '$currentDirectory/config/home/.nvm:/home/$USER/.nvm:rw'"
 command="$command -v '$currentDirectory/applications:/applications:rw'"
 command="$command -v '$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw'"
@@ -207,6 +211,7 @@ command="$command -v '$currentDirectory/var/gitconfig.aliases:/var/ide/git/alias
 command="$command -v '$currentDirectory/var/.npm:/home/$USER/.npm:rw'"
 command="$command -v '$currentDirectory/var/.cache:/home/$USER/.cache:rw'"
 command="$command -v '$currentDirectory/var/.NERDTreeBookmarks:/home/$USER/.NERDTreeBookmarks:rw'"
+command="$command -v '$currentDirectory/var/go:/go:rw'"
 command="$command -v '/:/disk:ro'"
 command="$command -v '$WORKSPACE:/workspace:rw'"
 command="$command $image"

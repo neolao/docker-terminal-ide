@@ -22,5 +22,6 @@ source ~/.config/nvim/init/plugin_eighties.vim
 source ~/.config/nvim/init/plugin_table-mode.vim
 source ~/.config/nvim/init/plugin_gina.vim
 source ~/.config/nvim/init/plugin_indent-guides.vim
+source ~/.config/nvim/init/plugin_go.vim
 source ~/.config/nvim/init/shortcuts.vim
 

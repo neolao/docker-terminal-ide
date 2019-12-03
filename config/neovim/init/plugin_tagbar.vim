@@ -31,7 +31,7 @@ endfunction
 "autocmd TabEnter * wincmd p
 
 let g:tagbar_type_typescript = {
-  \ 'ctagsbin' : 'tstags',
+  \ 'ctagsbin' : 'ts-ctags',
   \ 'ctagsargs' : '-f-',
   \ 'kinds': [
     \ 'f:function:0:1',

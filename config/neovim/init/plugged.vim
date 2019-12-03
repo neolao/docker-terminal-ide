@@ -73,6 +73,8 @@ if $NEOVIM_PLUGIN_TERN
     Plug 'ternjs/tern_for_vim', {'do' : 'npm install'}
 endif
 
+" Go
+Plug 'fatih/vim-go', { 'tag': 'v1.21', 'do': ':GoUpdateBinaries' }
 
 " Typescript
 if ($NODEJS_DEFAULT_VERSION && $TYPESCRIPT)

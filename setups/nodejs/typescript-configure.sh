@@ -14,14 +14,14 @@ then
 
     install_needed=0
     typescript_needed=0
-    tstags_needed=0
+    tsctags_needed=0
 
     if [ ! -f ~/.nvm/versions/node/$version/bin/tsc ];then
         typescript_needed=1
         install_needed=1
     fi
-    if [ ! -f ~/.nvm/versions/node/$version/bin/tstags ];then
-        tstags_needed=1
+    if [ ! -f ~/.nvm/versions/node/$version/bin/ts-ctags ];then
+        tsctags_needed=1
         install_needed=1
     fi
 
@@ -36,10 +36,10 @@ then
             npm install -g typescript
         ) 2>&1 | trace_output
     fi
-    if [ $tstags_needed -eq 1 ]; then
+    if [ $tsctags_needed -eq 1 ]; then
         . /setups/util/trace_output.sh
         (
-            npm install -g git+https://github.com/Perlence/tstags.git
+            npm install -g ts-ctags
         ) 2>&1 | trace_output
     fi
 
