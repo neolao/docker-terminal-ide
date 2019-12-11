@@ -87,6 +87,9 @@ if $NEOVIM_PLUGIN_PHPCD
     Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 endif
 
+" Jekyll
+Plug 'tpope/vim-liquid'
+
 call plug#end()
 
 " Auto install
