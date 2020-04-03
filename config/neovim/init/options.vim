@@ -117,9 +117,10 @@ set ruler
 set nowrap
 
 " Options folding
-set foldenable
-set foldmethod=marker
-set foldmarker={{{,}}}
+"set foldenable
+"set foldmethod=marker
+"set foldmarker={{{,}}}
+set nofoldenable
 
 " Un petit menu qui permet d'afficher la liste des éléments
 " filtrés avec un wildcard

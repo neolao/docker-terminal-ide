@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:buster-slim
 maintainer neolao <contact@neolao.com>
 
 RUN apt-get update && \

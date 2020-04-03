@@ -48,7 +48,7 @@ Softwares
 
 | Name   | Version         |
 | ------ | --------------- |
-| Debian | `11` (bullseye) |
+| Debian | `10` (buster)   |
 | `nvim` | `0.5.0`         |
 | `git`  | `2.23.0`        |
 | `grv`  | `0.3.2`         |
