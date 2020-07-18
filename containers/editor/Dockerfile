@@ -16,7 +16,9 @@ RUN apt-get update && \
     # Packages for GRV
     golang libcurl3-dev libreadline-dev libncursesw5-dev \
     # Vim plugin: YouCompleteMe
-    build-essential python3-dev
+    build-essential python3-dev \
+    # Packages for C++
+    clang-format
 
 
 

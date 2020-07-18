@@ -77,6 +77,9 @@ endif
 " Go
 Plug 'fatih/vim-go', { 'tag': 'v1.21', 'do': ':GoUpdateBinaries' }
 
+" C++
+Plug 'rhysd/vim-clang-format'
+
 " Typescript
 if ($NODEJS_DEFAULT_VERSION && $TYPESCRIPT)
     Plug 'leafgarland/typescript-vim'
