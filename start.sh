@@ -22,6 +22,7 @@ export NEOVIM_PLUGIN_PHPCD=0
 export NEOVIM_PLUGIN_TERN=0
 export NEOVIM_PLUGIN_PRETTIER=0
 export TYPESCRIPT=0
+export DENO=0
 export START_TMUX=0
 export START_TWIN=0
 export MULTIPLE=1
@@ -64,8 +65,14 @@ while test $# -gt 0; do
             export NEOVIM_PLUGIN_PRETTIER=1
             shift
             ;;
+
         --typescript)
             export TYPESCRIPT=1
+            shift
+            ;;
+
+        --deno)
+            export DENO=1
             shift
             ;;
 
@@ -104,6 +111,10 @@ while test $# -gt 0; do
     esac
 done
 
+if [ "$TYPESCRIPT" -eq 1 ] && [ "$DENO" -eq 1 ]; then
+    echo "You cannot enable Typescript and Deno at the same time"
+    exit 1;
+fi
 
 # Select the workspace
 if [ -n "$target" ]
@@ -159,6 +170,7 @@ command="$command -e NEOVIM_PLUGIN_PHPCD=$NEOVIM_PLUGIN_PHPCD"
 command="$command -e NEOVIM_PLUGIN_TERN=$NEOVIM_PLUGIN_TERN"
 command="$command -e NEOVIM_PLUGIN_PRETTIER=$NEOVIM_PLUGIN_PRETTIER"
 command="$command -e TYPESCRIPT=$TYPESCRIPT"
+command="$command -e DENO=$DENO"
 command="$command -e TMUX=$TMUX"
 command="$command -e LAUNCHER=$LAUNCHER"
 #command="$command -v '/etc/passwd:/etc/passwd:ro'"
@@ -195,6 +207,7 @@ command="$command -v '$currentDirectory/config/neovim/plug.vim:/home/$USER/plug.
 command="$command -v '$currentDirectory/config/neovim/plugged:/home/$USER/.config/nvim/plugged:rw'"
 command="$command -v '$currentDirectory/config/neovim/themes:/home/$USER/.config/nvim/themes:ro'"
 command="$command -v '$currentDirectory/config/neovim/init:/home/$USER/.config/nvim/init:ro'"
+command="$command -v '$currentDirectory/config/neovim/init/coc/coc-settings.json:/home/$USER/.config/nvim/coc-settings.json:rw'"
 command="$command -v '$currentDirectory/config/neovim/init.vim:/home/$USER/.config/nvim/init.vim:ro'"
 command="$command -v '$currentDirectory/config/neovim/ftplugin:/home/$USER/.config/nvim/ftplugin:ro'"
 command="$command -v '$currentDirectory/config/neovim/after:/home/$USER/.config/nvim/after:ro'"

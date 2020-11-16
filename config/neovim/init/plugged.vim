@@ -50,7 +50,7 @@ Plug 'neolao/vim-eighties'
 Plug 'nathanaelkane/vim-indent-guides'
 
 " Linter
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 " Syntax
 Plug 'editorconfig/editorconfig-vim'
@@ -82,8 +82,14 @@ Plug 'rhysd/vim-clang-format'
 
 " Typescript
 if ($NODEJS_DEFAULT_VERSION && $TYPESCRIPT)
-    Plug 'leafgarland/typescript-vim'
-    Plug 'Quramy/tsuquyomi', {'do' : 'npm install -g typescript'}
+"    Plug 'leafgarland/typescript-vim'
+"    Plug 'Quramy/tsuquyomi', {'do' : 'npm install -g typescript'}
+    Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+endif
+
+" Deno
+if ($NODEJS_DEFAULT_VERSION && $DENO)
+    Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 endif
 
 " PHP
