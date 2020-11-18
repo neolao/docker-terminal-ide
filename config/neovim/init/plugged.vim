@@ -16,6 +16,9 @@ Plug '~/.config/nvim/themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" Menus
+Plug 'skywind3000/vim-quickui'
+
 " File explorer
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'neolao/vim-nerdtree-tabs'
@@ -82,9 +85,9 @@ Plug 'rhysd/vim-clang-format'
 
 " Typescript
 if ($NODEJS_DEFAULT_VERSION && $TYPESCRIPT)
-"    Plug 'leafgarland/typescript-vim'
-"    Plug 'Quramy/tsuquyomi', {'do' : 'npm install -g typescript'}
-    Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+    Plug 'leafgarland/typescript-vim'
+    Plug 'Quramy/tsuquyomi', {'do' : 'npm install -g typescript'}
+    "Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 endif
 
 " Deno

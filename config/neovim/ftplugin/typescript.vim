@@ -1,4 +1,4 @@
-if ($TYPESCRIPT)
+if $TYPESCRIPT
     let b:ale_fixers = ['tslint']
 else
     let b:ale_fixers = []
@@ -11,4 +11,6 @@ endif
 "vmap <A-f> <Esc> :ALEFix tslint<cr>
 
 " Autocompletion with Tsuquyomi
-"setlocal omnifunc=tsuquyomi#complete
+if $TYPESCRIPT
+    setlocal omnifunc=tsuquyomi#complete
+endif

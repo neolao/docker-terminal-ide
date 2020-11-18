@@ -205,6 +205,7 @@ command="$command -v '$currentDirectory/config/tmux/tmux.conf:/home/$USER/.tmux.
 command="$command -v '$currentDirectory/config/twin/twinrc2:/home/$USER/.twinrc:ro'"
 command="$command -v '$currentDirectory/config/neovim/plug.vim:/home/$USER/plug.vim:ro'"
 command="$command -v '$currentDirectory/config/neovim/plugged:/home/$USER/.config/nvim/plugged:rw'"
+command="$command -v '$currentDirectory/config/neovim/coc:/home/$USER/.config/coc:rw'"
 command="$command -v '$currentDirectory/config/neovim/themes:/home/$USER/.config/nvim/themes:ro'"
 command="$command -v '$currentDirectory/config/neovim/init:/home/$USER/.config/nvim/init:ro'"
 command="$command -v '$currentDirectory/config/neovim/init/coc/coc-settings.json:/home/$USER/.config/nvim/coc-settings.json:rw'"

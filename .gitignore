@@ -6,5 +6,8 @@
 /config/zsh/oh-my-zsh
 /config/zsh/oh-my-zsh-custom/themes
 /config/neovim/plugged
+!/config/neovim/plugged/.keep
+/config/neovim/coc
+!/config/neovim/coc/.keep
 /var
 !/var/.keep

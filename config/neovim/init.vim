@@ -24,5 +24,6 @@ source ~/.config/nvim/init/plugin_gina.vim
 source ~/.config/nvim/init/plugin_indent-guides.vim
 source ~/.config/nvim/init/plugin_go.vim
 source ~/.config/nvim/init/plugin_coc.vim
+source ~/.config/nvim/init/plugin_quickui.vim
 source ~/.config/nvim/init/shortcuts.vim
 
