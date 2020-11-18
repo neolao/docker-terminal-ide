@@ -78,7 +78,9 @@ if $NEOVIM_PLUGIN_TERN
 endif
 
 " Go
-Plug 'fatih/vim-go', { 'tag': 'v1.21', 'do': ':GoUpdateBinaries' }
+if $GO
+    Plug 'fatih/vim-go', { 'tag': 'v1.21', 'do': ':GoUpdateBinaries' }
+endif
 
 " C++
 Plug 'rhysd/vim-clang-format'

@@ -23,6 +23,7 @@ export NEOVIM_PLUGIN_TERN=0
 export NEOVIM_PLUGIN_PRETTIER=0
 export TYPESCRIPT=0
 export DENO=0
+export GO=0
 export START_TMUX=0
 export START_TWIN=0
 export MULTIPLE=1
@@ -73,6 +74,11 @@ while test $# -gt 0; do
 
         --deno)
             export DENO=1
+            shift
+            ;;
+
+        --go)
+            export GO=1
             shift
             ;;
 
@@ -171,6 +177,7 @@ command="$command -e NEOVIM_PLUGIN_TERN=$NEOVIM_PLUGIN_TERN"
 command="$command -e NEOVIM_PLUGIN_PRETTIER=$NEOVIM_PLUGIN_PRETTIER"
 command="$command -e TYPESCRIPT=$TYPESCRIPT"
 command="$command -e DENO=$DENO"
+command="$command -e GO=$GO"
 command="$command -e TMUX=$TMUX"
 command="$command -e LAUNCHER=$LAUNCHER"
 #command="$command -v '/etc/passwd:/etc/passwd:ro'"
