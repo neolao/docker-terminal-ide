@@ -10,6 +10,20 @@ call quickui#menu#install('File', [
             \ [ "Exit", ':qa!' ],
             \ ])
 
+call quickui#menu#install('Explorer', [
+            \ [ "Toggle", ':NERDTreeTabsToggle' ],
+            \ [ "Reveal current file\tCtrl+g", ':NERDTreeFind' ],
+            \ ])
+
+function! SearchInFiles()
+    let searchTerm = input('Search in files: ')
+    execute "CtrlSF " searchTerm
+endfunction
+call quickui#menu#install('Search', [
+            \ [ "Search by file path\tCtrl+o", ':CtrlP' ],
+            \ [ "Search in files\tCtrl+f", ':call SearchInFiles()' ],
+            \ ])
+
 call quickui#menu#install('Plugins', [
             \ [ "Status", ':PlugStatus' ],
             \ [ "Install plugins", ':PlugInstall' ],

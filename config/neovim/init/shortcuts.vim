@@ -20,7 +20,7 @@ map <silent> <F4> :NERDTreeFind<cr>
 imap <F4> <Esc><F4>
 vmap <F4> <Esc><F4>
 
-" Ctrl+m : [PLUGIN] NerdTree
+" Ctrl+g : [PLUGIN] NerdTree
 map <C-g> <Esc> :NERDTreeFind<cr>
 imap <C-g> <Esc> :NERDTreeFind<cr>
 vmap <C-g> <Esc> :NERDTreeFind<cr>
@@ -34,9 +34,9 @@ imap <F8> <Esc><F8>
 vmap <F8> <Esc><F8>
 
 " Ctrl+f : [PLUGIN] CtrlSF
-map <C-f> <Esc> :CtrlSF 
-imap <C-f> <Esc> :CtrlSF 
-vmap <C-f> <Esc> :CtrlSF 
+map <C-f> <Esc> :CtrlSF<space>
+imap <C-f> <Esc> :CtrlSF<space>
+vmap <C-f> <Esc> :CtrlSF<space>
 
 " Ctrl+o : [PLUGIN] CtrlP
 map <C-o> <Esc> :CtrlP .<cr>
