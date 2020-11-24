@@ -95,6 +95,11 @@ map <silent> <C-z> :undo<CR>
 imap <C-z> <Esc><C-z>
 vmap <C-z> <Esc><C-z>
 
+" Redo: Ctrl+r
+map <silent> <C-r> :redo<CR>
+imap <C-r> <Esc><C-r>
+vmap <C-r> <Esc><C-r>
+
 " Select all: Ctrl+a
 map <C-a> ggVG
 imap <C-a> <Esc><C-a>

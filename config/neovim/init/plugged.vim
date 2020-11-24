@@ -62,7 +62,11 @@ Plug 'vim-syntastic/syntastic'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'niftylettuce/vim-jinja'
 if $NODEJS_DEFAULT_VERSION
-    Plug 'prettier/vim-prettier', {'do' : 'npm install', 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue']}
+    Plug 'prettier/vim-prettier', {
+      \ 'do' : 'yarn install',
+      \ 'branch': 'release/0.x',
+      \ 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml']
+      \ }
 endif
 
 " styled components
