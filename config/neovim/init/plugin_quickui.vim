@@ -1,3 +1,9 @@
+" enable to display tips in the cmdline
+let g:quickui_show_tip = 1
+
+" Border style
+let g:quickui_border_style = 2
+
 " clear all the menus
 call quickui#menu#reset()
 
@@ -32,13 +38,13 @@ call quickui#menu#install('Explorer', [
             \ [ "Reveal current file\tCtrl+g", ':NERDTreeFind' ],
             \ ])
 
-function! SearchInFiles()
-    let searchTerm = input('Search in files: ')
-    execute "CtrlSF " searchTerm
+function! PromptAndSearchInProject()
+    let l:searchTerm = input('Search in project: ')
+    execute "CtrlSF " . l:searchTerm
 endfunction
 call quickui#menu#install('Search', [
             \ [ "Search by file path\tCtrl+o", ':CtrlP' ],
-            \ [ "Search in files\tCtrl+f", ':call SearchInFiles()' ],
+            \ [ "Search in files\tCtrl+f", ':call PromptAndSearchInProject()' ],
             \ [ "Toggle Search in files", ':CtrlSFToggle' ],
             \ ])
 
@@ -85,11 +91,33 @@ call quickui#menu#install('YAML', [
             \ [ "Format", ':Prettier' ],
             \ ], '<auto>', 'yml,yaml')
 
-" enable to display tips in the cmdline
-let g:quickui_show_tip = 1
-
-" Border style
-let g:quickui_border_style = 2
-
 " hit space twice to open menu
 noremap <space><space> :call quickui#menu#open()<cr>
+
+
+
+
+function! SearchInFile()
+    let l:wordUnderCursor = expand("<cword>")
+    let @/="" . l:wordUnderCursor . "\\c"
+    execute "normal ggn"
+endfunction
+function! SearchAndReplaceInFile()
+    let l:wordUnderCursor = expand("<cword>")
+    let l:newWord = input('Replace "' . wordUnderCursor . '" by: ')
+    execute "%s/" . l:wordUnderCursor . "/" . l:newWord . "/g"
+endfunction
+function! SearchInProject()
+    let l:wordUnderCursor = expand("<cword>")
+    execute "CtrlSF " . l:wordUnderCursor
+endfunction
+let contextMenu = [
+            \ ["Search in file", ':call SearchInFile()' ],
+            \ ["Search in project", ':call SearchInProject()' ],
+            \ ["Search and replace in file", ':call SearchAndReplaceInFile()' ],
+            \ ]
+
+" set cursor to the last position
+let opts = {'index':g:quickui#context#cursor}
+noremap <C-m> :call quickui#context#open(contextMenu, opts)<cr>
+

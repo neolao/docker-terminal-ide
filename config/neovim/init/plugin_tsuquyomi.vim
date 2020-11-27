@@ -7,6 +7,7 @@ if $TYPESCRIPT
   set omnifunc=tsuquyomi#complete
   autocmd FileType typescript TsuReload
   autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
-  autocmd FileType typescript setlocal completeopt+=menu,preview
+  autocmd FileType typescript setlocal completeopt+=menu
+  "autocmd FileType typescript setlocal completeopt+=menu,preview
   autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 endif
