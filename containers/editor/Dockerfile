@@ -4,7 +4,7 @@ maintainer neolao <contact@neolao.com>
 RUN apt-get update && \
     apt-get install -y \
     # General packages
-    sudo zsh htop git unzip wget curl automake cmake autoconf pkg-config libncurses5-dev \
+    sudo zsh htop unzip wget curl automake cmake autoconf pkg-config libncurses5-dev software-properties-common \
     # Packages for editorconfig
     libpcre3-dev editorconfig \
     # Packages for neovim
@@ -20,7 +20,9 @@ RUN apt-get update && \
     # Packages for C++
     clang-format
 
-
+# Install git
+RUN apt-add-repository "deb http://deb.debian.org/debian buster-backports main"
+RUN apt-get update && apt-get -t buster-backports install -y git
 
 # Build tmux
 RUN git clone https://github.com/tmux/tmux.git tmux
@@ -82,6 +84,14 @@ RUN apt-get install -y git-lfs
 
 # Install Terminal Markdown Viewer
 RUN pip3 install mdv
+
+# Install timg
+RUN apt-get install -y libwebp-dev libgraphicsmagick++-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+RUN git clone https://github.com/hzeller/timg.git
+RUN cd timg/src && make WITH_VIDEO_DECODING=1 && make install
+
+# Install thefuck
+RUN pip3 install thefuck
 
 # Volume
 RUN mkdir /workspace

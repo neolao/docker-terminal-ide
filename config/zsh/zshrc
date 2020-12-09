@@ -75,6 +75,12 @@ plugins=(ant colorize cp history history-substring-search node themes vim-intera
 
 source $ZSH/oh-my-zsh.sh
 
+# Load completion files from the ~/.zsh directory.
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+
+autoload -Uz compinit && compinit
+
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
@@ -117,6 +123,9 @@ if [ -f /tmux/tmux ]
 then
     export PATH="$PATH:/tmux"
 fi
+
+# thefuck
+eval $(thefuck --alias)
 
 # Default directory
 cd /workspace

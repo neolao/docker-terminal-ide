@@ -18,6 +18,9 @@
     new = green bold
     whitespace = red reverse
 
+[pull]
+    rebase = true
+
 [push]
     default = simple
 
