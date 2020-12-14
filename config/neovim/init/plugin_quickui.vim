@@ -42,10 +42,16 @@ function! PromptAndSearchInProject()
     let l:searchTerm = input('Search in project: ')
     execute "CtrlSF " . l:searchTerm
 endfunction
+function! ReplaceAllInCurrentFile()
+    let l:searchTerm = input('Search in current file: ')
+    let l:replaceTerm = input('Replaced by: ')
+    execute "%s|" . l:searchTerm . "|" . l:replaceTerm . "|g"
+endfunction
 call quickui#menu#install('Search', [
             \ [ "Search by file path\tCtrl+o", ':CtrlP' ],
             \ [ "Search in files\tCtrl+f", ':call PromptAndSearchInProject()' ],
             \ [ "Toggle Search in files", ':CtrlSFToggle' ],
+            \ [ "Replace all in current file", ':call ReplaceAllInCurrentFile()' ],
             \ ])
 
 call quickui#menu#install('Plugins', [
@@ -105,7 +111,7 @@ endfunction
 function! SearchAndReplaceInFile()
     let l:wordUnderCursor = expand("<cword>")
     let l:newWord = input('Replace "' . wordUnderCursor . '" by: ')
-    execute "%s/" . l:wordUnderCursor . "/" . l:newWord . "/g"
+    execute "%s|" . l:wordUnderCursor . "|" . l:newWord . "|g"
 endfunction
 function! SearchInProject()
     let l:wordUnderCursor = expand("<cword>")
