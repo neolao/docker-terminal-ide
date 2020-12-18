@@ -1,4 +1,5 @@
 
+source ~/.config/nvim/init/plugin_polyglot.vim
 source ~/.config/nvim/init/plugin_ale.vim
 source ~/.config/nvim/init/plugged.vim
 source ~/.config/nvim/init/options.vim
@@ -16,7 +17,6 @@ source ~/.config/nvim/init/plugin_better-whitespace.vim
 source ~/.config/nvim/init/plugin_neosnippet.vim
 source ~/.config/nvim/init/plugin_tsuquyomi.vim
 source ~/.config/nvim/init/plugin_devicons.vim
-source ~/.config/nvim/init/plugin_polyglot.vim
 source ~/.config/nvim/init/plugin_airline.vim
 source ~/.config/nvim/init/plugin_eighties.vim
 source ~/.config/nvim/init/plugin_table-mode.vim

@@ -1,7 +1,15 @@
 if $TYPESCRIPT
     let b:ale_fixers = ['tslint']
+
+    " Autocompletion with Tsuquyomi
+    setlocal omnifunc=tsuquyomi#complete
 else
-    let b:ale_fixers = []
+    if $DENO
+        "let b:ale_fixers = ['denofmt']
+        let b:ale_fixers = []
+    else
+        let b:ale_fixers = []
+    endif
 endif
 
 
@@ -10,7 +18,3 @@ endif
 "imap <A-f> <Esc> :ALEFix tslint<cr>
 "vmap <A-f> <Esc> :ALEFix tslint<cr>
 
-" Autocompletion with Tsuquyomi
-if $TYPESCRIPT
-    setlocal omnifunc=tsuquyomi#complete
-endif

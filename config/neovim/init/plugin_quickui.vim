@@ -8,6 +8,7 @@ let g:quickui_border_style = 2
 call quickui#menu#reset()
 
 call quickui#menu#install('File', [
+            \ [ "Reload", ':edit' ],
             \ [ "New File", ':tabnew' ],
             \ [ "Close", ':q' ],
             \ [ "--", '' ],
@@ -62,18 +63,56 @@ call quickui#menu#install('Plugins', [
             \ [ "Upgrade vim-plug", ':PlugUpgrade' ],
             \ ])
 
-let typescriptEntries = [
-            \ [ "Format", ':Prettier' ],
+let g:auto_prettier_typescript_enabled = 0
+let g:auto_deno_format_enabled = 0
+
+function! ToggleAutoPrettierTypescript()
+    if g:auto_prettier_typescript_enabled
+        let g:auto_prettier_typescript_enabled = 0
+        autocmd! AutoPrettierTypescript BufWritePost *.ts
+    else
+        let g:auto_deno_format_enabled = 0
+        let g:auto_prettier_typescript_enabled = 1
+        augroup AutoPrettierTypescript
+            autocmd BufWritePost *.ts silent Prettier %
+            autocmd BufWritePost *.ts edit
+        augroup END
+    endif
+endfunction
+
+function! ToggleAutoDenoFormat()
+    if g:auto_deno_format_enabled
+        let g:auto_deno_format_enabled = 0
+        autocmd! AutoDenoFormat BufWritePost *.ts
+    else
+        let g:auto_prettier_typescript_enabled = 0
+        let g:auto_deno_format_enabled = 1
+        augroup AutoDenoFormat
+            autocmd BufWritePost *.ts silent !deno fmt %
+            autocmd BufWritePost *.ts edit
+        augroup END
+    endif
+endfunction
+
+let s:typescriptEntries = [
+            \ [ "Prettier format", ':Prettier' ],
+            \ [ "Toggle auto Prettier format\t%{get(g:, 'auto_prettier_typescript_enabled', 1)? 'On':'Off'}", ':call ToggleAutoPrettierTypescript()' ],
             \ ]
 if $DENO
+    call ToggleAutoDenoFormat()
+
     call quickui#menu#install('Completion', [
             \ [ "COC Info", ':CocInfo' ],
             \ [ "COC Restart", ':CocRestart' ],
             \ ], '<auto>', 'ts,tsx,typecript')
+    let s:typescriptEntries = s:typescriptEntries + [
+            \ [ "Deno format", ':! deno fmt %' ],
+            \ [ "Toggle auto deno format\t%{get(g:, 'auto_deno_format_enabled', 1)? 'On':'Off'}", ':call ToggleAutoDenoFormat()' ],
+            \ ]
 endif
 
 if $TYPESCRIPT
-    let typescriptEntries = typescriptEntries + [
+    let s:typescriptEntries = s:typescriptEntries + [
             \ [ "--", '' ],
             \ [ "Tsuquyomi Reload", ':TsuquyomiReload' ],
             \ [ "Tsuquyomi Check server", ':TsuquyomiStatusServer' ],
@@ -82,7 +121,7 @@ if $TYPESCRIPT
             \ ]
 endif
 
-call quickui#menu#install('Typescript', typescriptEntries, '<auto>', 'ts,tsx,typescript')
+call quickui#menu#install('Typescript', s:typescriptEntries, '<auto>', 'ts,tsx,typescript')
 
 
 call quickui#menu#install('JSON', [
