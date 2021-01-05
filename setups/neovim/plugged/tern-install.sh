@@ -13,6 +13,10 @@ nvm use $NODEJS_DEFAULT_VERSION > /dev/null 2>&1
 
 tern_install_needed=0
 
+if [ ! -d ~/.config/nvim/plugged/tern_for_vim ];then
+    exit 0
+fi
+
 if [ ! -d ~/.config/nvim/plugged/tern_for_vim/node_modules ];then
     tern_install_needed=1
 fi

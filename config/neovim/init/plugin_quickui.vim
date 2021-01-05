@@ -46,7 +46,7 @@ endfunction
 function! ReplaceAllInCurrentFile()
     let l:searchTerm = input('Search in current file: ')
     let l:replaceTerm = input('Replaced by: ')
-    execute "%s|" . l:searchTerm . "|" . l:replaceTerm . "|g"
+    execute "%s/" . l:searchTerm . "/" . l:replaceTerm . "/g"
 endfunction
 call quickui#menu#install('Search', [
             \ [ "Search by file path\tCtrl+o", ':CtrlP' ],
@@ -150,7 +150,7 @@ endfunction
 function! SearchAndReplaceInFile()
     let l:wordUnderCursor = expand("<cword>")
     let l:newWord = input('Replace "' . wordUnderCursor . '" by: ')
-    execute "%s|" . l:wordUnderCursor . "|" . l:newWord . "|g"
+    execute "%s/" . l:wordUnderCursor . "/" . l:newWord . "/g"
 endfunction
 function! SearchInProject()
     let l:wordUnderCursor = expand("<cword>")
