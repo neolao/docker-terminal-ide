@@ -21,6 +21,8 @@ export NODEJS_DEFAULT_VERSION=15
 export NEOVIM_PLUGIN_PHPCD=0
 export NEOVIM_PLUGIN_TERN=0
 export NEOVIM_PLUGIN_PRETTIER=0
+export PHP_DEFAULT_VERSION=7.4.13
+export PHP=0
 export TYPESCRIPT=0
 export DENO=0
 export GO=0
@@ -55,6 +57,10 @@ while test $# -gt 0; do
             echo ""
             echo "Options:"
             echo "    --nodejs=N    Install NodeJS version N"
+            echo "    --php=N       Install PHP version N"
+            echo "    --typescript  Optimized for Typescript"
+            echo "    --deno        Optimized for Deno"
+            echo "    --go          Optimized for Go"
             echo "    --tmux        Use TMUX"
             exit 0
             ;;
@@ -79,6 +85,12 @@ while test $# -gt 0; do
 
         --go)
             export GO=1
+            shift
+            ;;
+        --php=*)
+            option=$1
+            export PHP_DEFAULT_VERSION=${option:6}
+            export PHP=1
             shift
             ;;
 
@@ -175,6 +187,8 @@ command="$command -e NODEJS_DEFAULT_VERSION=$NODEJS_DEFAULT_VERSION"
 command="$command -e NEOVIM_PLUGIN_PHPCD=$NEOVIM_PLUGIN_PHPCD"
 command="$command -e NEOVIM_PLUGIN_TERN=$NEOVIM_PLUGIN_TERN"
 command="$command -e NEOVIM_PLUGIN_PRETTIER=$NEOVIM_PLUGIN_PRETTIER"
+command="$command -e PHP_DEFAULT_VERSION=$PHP_DEFAULT_VERSION"
+command="$command -e PHP=$PHP"
 command="$command -e TYPESCRIPT=$TYPESCRIPT"
 command="$command -e DENO=$DENO"
 command="$command -e GO=$GO"
@@ -228,6 +242,7 @@ command="$command -v '$currentDirectory/var/.vim-backup:/home/$USER/.vim-backup:
 command="$command -v '$currentDirectory/var/.vim-swap:/home/$USER/.vim-swap:rw'"
 command="$command -v '$currentDirectory/var/.vim-undo:/home/$USER/.vim-undo:rw'"
 command="$command -v '$currentDirectory/config/home/.nvm:/home/$USER/.nvm:rw'"
+command="$command -v '$currentDirectory/config/home/.phpenv:/home/$USER/.phpenv:rw'"
 command="$command -v '$currentDirectory/applications:/applications:rw'"
 command="$command -v '$currentDirectory/bin/gitui:/usr/local/bin/gitui:ro'"
 command="$command -v '$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw'"

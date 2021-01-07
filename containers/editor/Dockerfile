@@ -93,6 +93,10 @@ RUN cd timg/src && make WITH_VIDEO_DECODING=1 && make install
 # Install thefuck
 RUN pip3 install thefuck
 
+# Install phpenv common dependencies
+RUN apt-get update && apt-get install -y libssl-dev libsqlite3-dev libonig-dev libtidy-dev libxslt-dev libzip-dev re2c
+
+
 # Volume
 RUN mkdir /workspace
 VOLUME ["/workspace"]

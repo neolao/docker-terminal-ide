@@ -127,6 +127,14 @@ fi
 # thefuck
 eval $(thefuck --alias)
 
+# phpenv
+if [ -d ~/.phpenv/bin ]
+then
+    export PATH="$PATH:$HOME/.phpenv/bin"
+    eval "$(phpenv init -)"
+fi
+
+
 # Default directory
 cd /workspace
 
