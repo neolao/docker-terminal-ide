@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exit 0
+
 if [ "$NEOVIM_PLUGIN_PHPCD" -eq 1 ]
 then
     echo ""

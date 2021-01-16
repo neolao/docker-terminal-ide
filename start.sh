@@ -91,6 +91,7 @@ while test $# -gt 0; do
             option=$1
             export PHP_DEFAULT_VERSION=${option:6}
             export PHP=1
+            export NEOVIM_PLUGIN_PHPCD=1
             shift
             ;;
 
@@ -246,6 +247,7 @@ command="$command -v '$currentDirectory/config/home/.phpenv:/home/$USER/.phpenv:
 command="$command -v '$currentDirectory/applications:/applications:rw'"
 command="$command -v '$currentDirectory/bin/gitui:/usr/local/bin/gitui:ro'"
 command="$command -v '$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw'"
+command="$command -v '$currentDirectory/bin/php-cs-fixer.phar:/usr/local/bin/php-cs-fixer:rw'"
 command="$command -v '$currentDirectory/bin/terminal-colors.py:/usr/local/bin/terminal-colors:ro'"
 command="$command -v '$currentDirectory/var/gitconfig.user:/var/ide/git/user:ro'"
 command="$command -v '$currentDirectory/var/gitconfig.aliases:/var/ide/git/aliases:ro'"

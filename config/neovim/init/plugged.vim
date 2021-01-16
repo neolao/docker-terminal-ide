@@ -57,7 +57,7 @@ Plug 'dense-analysis/ale'
 
 " Syntax
 Plug 'editorconfig/editorconfig-vim'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 Plug 'vim-syntastic/syntastic'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'niftylettuce/vim-jinja'
@@ -102,8 +102,17 @@ if ($NODEJS_DEFAULT_VERSION && $DENO)
 endif
 
 " PHP
+if $PHP
+    Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install'}
+    Plug 'stephpy/vim-php-cs-fixer'
+    Plug 'ncm2/ncm2'
+    Plug 'roxma/nvim-yarp'
+    Plug 'ncm2/ncm2-bufword'
+    Plug 'ncm2/ncm2-path'
+    Plug 'phpactor/ncm2-phpactor'
+endif
 if $NEOVIM_PLUGIN_PHPCD
-    Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+    "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 endif
 
 " Jekyll

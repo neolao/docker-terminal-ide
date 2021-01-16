@@ -124,6 +124,10 @@ endif
 call quickui#menu#install('Typescript', s:typescriptEntries, '<auto>', 'ts,tsx,typescript')
 
 
+call quickui#menu#install('PHP', [
+            \ [ "CS Fixer", ':call PhpCsFixerFixFile()' ],
+            \ ], '<auto>', 'php')
+
 call quickui#menu#install('JSON', [
             \ [ "Format", ':Prettier' ],
             \ ], '<auto>', 'json')

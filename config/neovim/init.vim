@@ -1,4 +1,3 @@
-
 source ~/.config/nvim/init/plugin_polyglot.vim
 source ~/.config/nvim/init/plugin_ale.vim
 source ~/.config/nvim/init/plugged.vim
@@ -15,6 +14,7 @@ source ~/.config/nvim/init/plugin_ctrlsf.vim
 source ~/.config/nvim/init/plugin_ctrlp.vim
 source ~/.config/nvim/init/plugin_better-whitespace.vim
 source ~/.config/nvim/init/plugin_neosnippet.vim
+source ~/.config/nvim/init/plugin_typescript.vim
 source ~/.config/nvim/init/plugin_tsuquyomi.vim
 source ~/.config/nvim/init/plugin_devicons.vim
 source ~/.config/nvim/init/plugin_airline.vim
@@ -22,6 +22,8 @@ source ~/.config/nvim/init/plugin_eighties.vim
 source ~/.config/nvim/init/plugin_table-mode.vim
 source ~/.config/nvim/init/plugin_gina.vim
 source ~/.config/nvim/init/plugin_indent-guides.vim
+source ~/.config/nvim/init/plugin_php_cs_fixer.vim
+source ~/.config/nvim/init/plugin_ncm2.vim
 source ~/.config/nvim/init/plugin_go.vim
 source ~/.config/nvim/init/plugin_coc.vim
 source ~/.config/nvim/init/plugin_quickui.vim

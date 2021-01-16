@@ -4,7 +4,7 @@ maintainer neolao <contact@neolao.com>
 RUN apt-get update && \
     apt-get install -y \
     # General packages
-    sudo zsh htop unzip wget curl automake cmake autoconf pkg-config libncurses5-dev software-properties-common \
+    sudo zsh htop unzip wget curl rsync inotify-tools automake cmake autoconf pkg-config libncurses5-dev software-properties-common \
     # Packages for editorconfig
     libpcre3-dev editorconfig \
     # Packages for neovim
