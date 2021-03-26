@@ -4,6 +4,9 @@ let g:quickui_show_tip = 1
 " Border style
 let g:quickui_border_style = 2
 
+" Color scheme
+let g:quickui_color_scheme = 'papercol dark'
+
 " clear all the menus
 call quickui#menu#reset()
 
@@ -39,6 +42,10 @@ call quickui#menu#install('Explorer', [
             \ [ "Reveal current file\tCtrl+g", ':NERDTreeFind' ],
             \ ])
 
+if !exists("g:last_replaces")
+    let g:last_replaces = []
+    let g:last_replaces_opts = {'title': 'Replace'}
+endif
 function! PromptAndSearchInProject()
     let l:searchTerm = input('Search in project: ')
     execute "CtrlSF " . l:searchTerm
@@ -46,13 +53,16 @@ endfunction
 function! ReplaceAllInCurrentFile()
     let l:searchTerm = input('Search in current file: ')
     let l:replaceTerm = input('Replaced by: ')
-    execute "%s/" . l:searchTerm . "/" . l:replaceTerm . "/g"
+    let l:command = "%s/" . l:searchTerm . "/" . l:replaceTerm . "/g"
+    execute l:command
+    let g:last_replaces = [ [ '"' . l:searchTerm . '" by "' . l:replaceTerm . '"', l:command ]] + g:last_replaces
 endfunction
 call quickui#menu#install('Search', [
             \ [ "Search by file path\tCtrl+o", ':CtrlP' ],
             \ [ "Search in files\tCtrl+f", ':call PromptAndSearchInProject()' ],
             \ [ "Toggle Search in files", ':CtrlSFToggle' ],
             \ [ "Replace all in current file", ':call ReplaceAllInCurrentFile()' ],
+            \ [ "Last replaces\tCount: %{len(g:last_replaces)}", 'call quickui#listbox#open(g:last_replaces, g:last_replaces_opts)' ],
             \ ])
 
 call quickui#menu#install('Plugins', [
