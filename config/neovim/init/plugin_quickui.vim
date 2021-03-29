@@ -5,7 +5,8 @@ let g:quickui_show_tip = 1
 let g:quickui_border_style = 2
 
 " Color scheme
-let g:quickui_color_scheme = 'papercol dark'
+"let g:quickui_color_scheme = 'papercol dark'
+let g:quickui_color_scheme = 'papercol light'
 
 " clear all the menus
 call quickui#menu#reset()
@@ -44,7 +45,7 @@ call quickui#menu#install('Explorer', [
 
 if !exists("g:last_replaces")
     let g:last_replaces = []
-    let g:last_replaces_opts = {'title': 'Replace'}
+    let g:last_replaces_opts = {'title': 'Replace', 'index':g:quickui#listbox#cursor, 'syntax': 'less', 'color': 'QuickBG'}
 endif
 function! PromptAndSearchInProject()
     let l:searchTerm = input('Search in project: ')
