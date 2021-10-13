@@ -194,4 +194,5 @@ au BufRead,BufNewFile *.php     set filetype=php
 
 " Auto completion
 set omnifunc=syntaxcomplete#Complete
-set completeopt=longest,menuone
+"set completeopt=longest,menuone
+"set completeopt=noinsert,menuone,noselect

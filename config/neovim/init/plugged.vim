@@ -39,7 +39,11 @@ Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
 
 " Auto complete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+"Plug 'ncm2/ncm2-bufword'
+"Plug 'ncm2/ncm2-path'
 
 " Snippet
 Plug 'Shougo/neosnippet.vim'
@@ -103,13 +107,11 @@ endif
 
 " PHP
 if $PHP
-    Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install'}
+    Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
     Plug 'stephpy/vim-php-cs-fixer'
-    Plug 'ncm2/ncm2'
-    Plug 'roxma/nvim-yarp'
-    Plug 'ncm2/ncm2-bufword'
-    Plug 'ncm2/ncm2-path'
     Plug 'phpactor/ncm2-phpactor'
+    Plug 'phpstan/vim-phpstan'
+    Plug 'kristijanhusak/deoplete-phpactor'
 endif
 if $NEOVIM_PLUGIN_PHPCD
     "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }

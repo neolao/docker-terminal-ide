@@ -20,4 +20,7 @@ then
     phpenv install --skip-existing $PHP_DEFAULT_VERSION
     phpenv rehash
     export PHPENV_VERSION=$PHP_DEFAULT_VERSION
+
+    # Configure phpactor
+    sudo ln -s ~/.config/nvim/plugged/phpactor/bin/phpactor /usr/local/bin/phpactor
 fi
