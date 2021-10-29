@@ -137,6 +137,10 @@ call quickui#menu#install('Typescript', s:typescriptEntries, '<auto>', 'ts,tsx,t
 
 call quickui#menu#install('PHP', [
             \ [ "CS Fixer", ':call PhpCsFixerFixFile()' ],
+            \ [ "Go to definition", ':PhpactorGotoDefinition' ],
+            \ [ "Go to definition (new tab)", ':PhpactorGotoDefinitionTab' ],
+            \ [ "Go to implementations", ':PhpactorGotoImplementations' ],
+            \ [ "Find references", ':PhpactorFindReferences' ],
             \ ], '<auto>', 'php')
 
 call quickui#menu#install('JSON', [
@@ -178,6 +182,7 @@ let contextMenu = [
             \ ]
 
 " set cursor to the last position
-let opts = {'index':g:quickui#context#cursor}
-noremap <C-m> :call quickui#context#open(contextMenu, opts)<cr>
+" Note: disabled because it breaks some features (ex. go to implementations)
+"let opts = {'index':g:quickui#context#cursor}
+"noremap <C-m> :call quickui#context#open(contextMenu, opts)<cr>
 

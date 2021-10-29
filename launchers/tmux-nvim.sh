@@ -25,4 +25,15 @@ then
 else
     /tmux/tmux $options new-window -t $SESSION:1 -k -n EDITOR "cd /workspace && nvim $FILE_TO_OPEN"
 fi
+
+if [ ! "$TMUX_GIT_WINDOW" -eq 0 ]
+then
+    /tmux/tmux $options new-window -n GIT -t $SESSION:
+    /tmux/tmux $options splitw -v -t $SESSION:2
+    /tmux/tmux $options send-keys -t $SESSION:2.1 'gitui' Enter
+    /tmux/tmux $options select-pane -t $SESSION:2.0
+fi
+
+/tmux/tmux $options select-window -t $SESSION:1.0
+
 /tmux/tmux $options attach -t $SESSION

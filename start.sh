@@ -29,6 +29,7 @@ export GO=0
 export START_TMUX=0
 export START_TWIN=0
 export MULTIPLE=1
+export TMUX_GIT_WINDOW=0
 
 # MacOS
 platform=$(uname)
@@ -98,6 +99,11 @@ while test $# -gt 0; do
         --tmux)
             export START_TMUX=1
             export LAUNCHER=/launchers/tmux-nvim.sh
+            shift
+            ;;
+
+        --tmux-git-window)
+            export TMUX_GIT_WINDOW=1
             shift
             ;;
 
@@ -194,6 +200,7 @@ command="$command -e TYPESCRIPT=$TYPESCRIPT"
 command="$command -e DENO=$DENO"
 command="$command -e GO=$GO"
 command="$command -e TMUX=$TMUX"
+command="$command -e TMUX_GIT_WINDOW=$TMUX_GIT_WINDOW"
 command="$command -e LAUNCHER=$LAUNCHER"
 #command="$command -v '/etc/passwd:/etc/passwd:ro'"
 #command="$command -v '/etc/shadow:/etc/shadow:ro'"
@@ -248,6 +255,7 @@ command="$command -v '$currentDirectory/applications:/applications:rw'"
 command="$command -v '$currentDirectory/bin/gitui:/usr/local/bin/gitui:ro'"
 command="$command -v '$currentDirectory/bin/composer.phar:/usr/local/bin/composer:rw'"
 command="$command -v '$currentDirectory/bin/php-cs-fixer.phar:/usr/local/bin/php-cs-fixer:rw'"
+command="$command -v '$currentDirectory/bin/phpstan.phar:/usr/local/bin/phpstan:rw'"
 command="$command -v '$currentDirectory/bin/terminal-colors.py:/usr/local/bin/terminal-colors:ro'"
 command="$command -v '$currentDirectory/var/gitconfig.user:/var/ide/git/user:ro'"
 command="$command -v '$currentDirectory/var/gitconfig.aliases:/var/ide/git/aliases:ro'"

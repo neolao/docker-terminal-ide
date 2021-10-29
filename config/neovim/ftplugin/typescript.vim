@@ -1,5 +1,7 @@
 if $TYPESCRIPT
-    let b:ale_fixers = ['tslint']
+    "let b:ale_fixers = ['tslint']
+    let b:ale_linters = ['eslint']
+    let b:ale_fixers = ['eslint']
 
     " Autocompletion with Tsuquyomi
     setlocal omnifunc=tsuquyomi#complete

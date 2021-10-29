@@ -56,6 +56,9 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'neolao/vim-eighties'
 Plug 'nathanaelkane/vim-indent-guides'
 
+" Quickfix and location list
+Plug 'yssl/QFEnter'
+
 " Linter
 Plug 'dense-analysis/ale'
 
@@ -66,6 +69,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'niftylettuce/vim-jinja'
 if $NODEJS_DEFAULT_VERSION
+    "  \ 'branch': 'release/0.x',
     Plug 'prettier/vim-prettier', {
       \ 'do' : 'yarn install',
       \ 'branch': 'release/0.x',
@@ -96,6 +100,7 @@ Plug 'rhysd/vim-clang-format'
 " Typescript
 if ($NODEJS_DEFAULT_VERSION && $TYPESCRIPT)
     Plug 'leafgarland/typescript-vim'
+    "Plug 'ncm2/nvim-typescript', {'do': 'npm install -g typescript && ./install.sh'}
     Plug 'Quramy/tsuquyomi', {'do' : 'npm install -g typescript'}
     "Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 endif

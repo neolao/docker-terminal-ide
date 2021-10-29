@@ -29,5 +29,7 @@ source ~/.config/nvim/init/plugin_go.vim
 source ~/.config/nvim/init/plugin_coc.vim
 source ~/.config/nvim/init/plugin_quickui.vim
 source ~/.config/nvim/init/plugin_phpstan.vim
+source ~/.config/nvim/init/plugin_qfenter.vim
+source ~/.config/nvim/init/plugin_prettier.vim
 source ~/.config/nvim/init/shortcuts.vim
 
