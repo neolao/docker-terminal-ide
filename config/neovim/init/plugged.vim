@@ -33,10 +33,12 @@ Plug 'vimlab/split-term.vim'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'dyng/ctrlsf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Git
 Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
+"Plug 'neoclide/coc-git.nvim', { 'do': 'yarn install --frozen-lockfile' }
 
 " Auto complete
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -71,8 +73,7 @@ Plug 'niftylettuce/vim-jinja'
 if $NODEJS_DEFAULT_VERSION
     "  \ 'branch': 'release/0.x',
     Plug 'prettier/vim-prettier', {
-      \ 'do' : 'yarn install',
-      \ 'branch': 'release/0.x',
+      \ 'do' : 'yarn install --frozen-lockfile --production',
       \ 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml']
       \ }
 endif
@@ -101,13 +102,15 @@ Plug 'rhysd/vim-clang-format'
 if ($NODEJS_DEFAULT_VERSION && $TYPESCRIPT)
     Plug 'leafgarland/typescript-vim'
     "Plug 'ncm2/nvim-typescript', {'do': 'npm install -g typescript && ./install.sh'}
-    Plug 'Quramy/tsuquyomi', {'do' : 'npm install -g typescript'}
-    "Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+    "Plug 'Quramy/tsuquyomi', {'do' : 'npm install -g typescript'}
+    Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 endif
 
 " Deno
 if ($NODEJS_DEFAULT_VERSION && $DENO)
-    Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+    "Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+    Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'fannheyward/coc-deno', { 'do': 'yarn install --frozen-lockfile' }
 endif
 
 " PHP

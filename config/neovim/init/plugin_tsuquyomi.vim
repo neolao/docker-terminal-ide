@@ -2,7 +2,7 @@ let g:tsuquyomi_completion_detail = 1
 let g:tsuquyomi_shortest_import_path = 1
 let g:tsuquyomi_use_local_typescript = 1
 
-if $TYPESCRIPT
+if $TYPESCRIPT && false
   set completeopt=longest,menuone
   set omnifunc=tsuquyomi#complete
   autocmd FileType typescript TsuReload

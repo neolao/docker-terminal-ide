@@ -1,4 +1,19 @@
 {
-    "tsserver.enableJavascript": false,
-    "diagnostic.displayByAle": true
+    "tsserver": {
+        "enableJavascript": false,
+        "log": "verbose"
+    },
+    "typescript": {
+        "preferences": {
+            "importModuleSpecifierEnding": ""
+        }
+    },
+    "javascript": {
+        "format": {
+            "enabled": false
+        }
+    },
+    "diagnostic": {
+        "displayByAle": true
+    }
 }

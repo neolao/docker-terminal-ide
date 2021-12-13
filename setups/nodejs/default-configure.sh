@@ -66,6 +66,7 @@ then
     fi
 
     nvm use $NODEJS_DEFAULT_VERSION > /dev/null 2>&1
+    nvm alias default $NODEJS_DEFAULT_VERSION
     node_path=$(which node)
     npm_path=$(which npm)
     sudo ln -s $node_path /usr/local/bin/node
@@ -80,5 +81,3 @@ then
 else
     exit 0
 fi
-
-
