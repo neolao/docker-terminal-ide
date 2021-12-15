@@ -103,14 +103,14 @@ if ($NODEJS_DEFAULT_VERSION && $TYPESCRIPT)
     Plug 'leafgarland/typescript-vim'
     "Plug 'ncm2/nvim-typescript', {'do': 'npm install -g typescript && ./install.sh'}
     "Plug 'Quramy/tsuquyomi', {'do' : 'npm install -g typescript'}
-    Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 endif
 
 " Deno
 if ($NODEJS_DEFAULT_VERSION && $DENO)
     "Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-    Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'fannheyward/coc-deno', { 'do': 'yarn install --frozen-lockfile' }
+    "Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+    "Plug 'fannheyward/coc-deno', { 'do': 'yarn install --frozen-lockfile' }
 endif
 
 " PHP
