@@ -74,7 +74,7 @@ if $NODEJS_DEFAULT_VERSION
     "  \ 'branch': 'release/0.x',
     Plug 'prettier/vim-prettier', {
       \ 'do' : 'yarn install --frozen-lockfile --production',
-      \ 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml']
+      \ 'for' : ['javascript', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml']
       \ }
 endif
 

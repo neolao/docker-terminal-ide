@@ -80,13 +80,20 @@ let g:auto_deno_format_enabled = 0
 function! ToggleAutoPrettierTypescript()
     if g:auto_prettier_typescript_enabled
         let g:auto_prettier_typescript_enabled = 0
-        autocmd! AutoPrettierTypescript BufWritePost *.ts
+        "autocmd! AutoPrettierTypescript BufWritePost *.ts,*.tsx
+        "autocmd! AutoPrettierTypescript TextChanged,InsertLeave *.ts,*.tsx
+
+        let g:prettier#autoformat = 0
     else
         let g:auto_deno_format_enabled = 0
         let g:auto_prettier_typescript_enabled = 1
+
+        let g:prettier#autoformat = 1
         augroup AutoPrettierTypescript
-            autocmd BufWritePost *.ts silent Prettier %
-            autocmd BufWritePost *.ts edit
+            "autocmd BufWritePost *.ts silent Prettier %
+            "autocmd BufWritePost *.ts edit
+            "autocmd TextChanged,InsertLeave *.ts,*.tsx PrettierAsync
+            "autocmd BufWritePost *.ts,*.tsx Prettier
         augroup END
     endif
 endfunction
@@ -132,7 +139,7 @@ if $TYPESCRIPT
     "        \ ]
 endif
 
-call quickui#menu#install('Typescript', s:typescriptEntries, '<auto>', 'ts,tsx,typescript')
+call quickui#menu#install('Typescript', s:typescriptEntries, '<auto>', 'ts,tsx,typescript,typescriptreact')
 
 
 call quickui#menu#install('PHP', [
