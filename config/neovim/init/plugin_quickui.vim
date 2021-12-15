@@ -123,13 +123,13 @@ if $DENO
 endif
 
 if $TYPESCRIPT
-    let s:typescriptEntries = s:typescriptEntries + [
-            \ [ "--", '' ],
-            \ [ "Tsuquyomi Reload", ':TsuquyomiReload' ],
-            \ [ "Tsuquyomi Check server", ':TsuquyomiStatusServer' ],
-            \ [ "Tsuquyomi Start server", ':TsuquyomiStartServer' ],
-            \ [ "Tsuquyomi Stop server", ':TsuquyomiStopServer' ],
-            \ ]
+    "let s:typescriptEntries = s:typescriptEntries + [
+    "        \ [ "--", '' ],
+    "        \ [ "Tsuquyomi Reload", ':TsuquyomiReload' ],
+    "        \ [ "Tsuquyomi Check server", ':TsuquyomiStatusServer' ],
+    "        \ [ "Tsuquyomi Start server", ':TsuquyomiStartServer' ],
+    "        \ [ "Tsuquyomi Stop server", ':TsuquyomiStopServer' ],
+    "        \ ]
 endif
 
 call quickui#menu#install('Typescript', s:typescriptEntries, '<auto>', 'ts,tsx,typescript')
@@ -185,4 +185,3 @@ let contextMenu = [
 " Note: disabled because it breaks some features (ex. go to implementations)
 "let opts = {'index':g:quickui#context#cursor}
 "noremap <C-m> :call quickui#context#open(contextMenu, opts)<cr>
-

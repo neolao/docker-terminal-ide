@@ -86,9 +86,9 @@ RUN apt-get install -y git-lfs
 RUN pip3 install mdv
 
 # Install timg
-RUN apt-get install -y libwebp-dev libgraphicsmagick++-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
-RUN git clone https://github.com/hzeller/timg.git
-RUN cd timg/src && make WITH_VIDEO_DECODING=1 && make install
+#RUN apt-get install -y libwebp-dev libgraphicsmagick++-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+#RUN git clone https://github.com/hzeller/timg.git
+#RUN cd timg/src && make WITH_VIDEO_DECODING=1 && make install
 
 # Install thefuck
 RUN pip3 install thefuck
