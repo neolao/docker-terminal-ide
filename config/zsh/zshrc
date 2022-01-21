@@ -138,6 +138,9 @@ fi
 # Default directory
 cd /workspace
 
+# thefuck temporary fix: https://github.com/nvbn/thefuck/issues/1219#issuecomment-885725319
+export THEFUCK_PRIORITY="git_hook_bypass=1100"
+
 # LOGO
 
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

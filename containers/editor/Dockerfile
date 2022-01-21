@@ -94,7 +94,7 @@ RUN pip3 install mdv
 RUN pip3 install thefuck
 
 # Install phpenv common dependencies
-RUN apt-get update && apt-get install -y libssl-dev libsqlite3-dev libonig-dev libtidy-dev libxslt-dev libzip-dev re2c
+RUN apt-get update && apt-get install -y libssl-dev libsqlite3-dev libonig-dev libtidy-dev libxslt-dev libzip-dev re2c libpng-dev libjpeg-dev
 
 
 # Volume
