@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! "$NODEJS_DEFAULT_VERSION" -eq 0 ]
+if [ ! -z "$NODEJS_DEFAULT_VERSION" ]
 then
     # Fix MacOS
     sudo mkdir /Users

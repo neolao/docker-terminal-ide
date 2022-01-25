@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$NODEJS_DEFAULT_VERSION" -eq 0 ]; then
+if [ -z "$NODEJS_DEFAULT_VERSION" ]; then
     exit 0
 fi
 if [ ! -f ~/.nvm/nvm.sh ]; then
@@ -31,4 +31,3 @@ if [ $tern_install_needed -eq 1 ]; then
         npm install --no-package-lock
     ) 2>&1 | trace_output
 fi
-
